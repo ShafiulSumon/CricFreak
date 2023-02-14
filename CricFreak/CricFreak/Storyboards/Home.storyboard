@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdx-Ak-hhw">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdx-Ak-hhw" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="59" width="393" height="59.666666666666657"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CricFreak(logo-2)" translatesAutoresizingMaskIntoConstraints="NO" id="yCW-xs-l5n">
-                                        <rect key="frame" x="16" y="10.333333333333329" width="157.33333333333334" height="39"/>
+                                        <rect key="frame" x="16" y="7.3333333333333286" width="157.33333333333334" height="45"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="customBlue"/>
@@ -29,12 +29,45 @@
                                     <constraint firstItem="yCW-xs-l5n" firstAttribute="width" secondItem="Kdx-Ak-hhw" secondAttribute="width" multiplier="0.4" id="Akl-zh-fem"/>
                                     <constraint firstItem="yCW-xs-l5n" firstAttribute="leading" secondItem="Kdx-Ak-hhw" secondAttribute="leading" constant="16" id="PLn-E2-0wj"/>
                                     <constraint firstItem="yCW-xs-l5n" firstAttribute="centerY" secondItem="Kdx-Ak-hhw" secondAttribute="centerY" id="l0L-gB-2lH"/>
-                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="height" secondItem="Kdx-Ak-hhw" secondAttribute="height" multiplier="0.65" id="rg4-4c-K3o"/>
+                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="height" secondItem="Kdx-Ak-hhw" secondAttribute="height" multiplier="0.75" id="rg4-4c-K3o"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9e2-Ks-CUO">
                                 <rect key="frame" x="0.0" y="118.66666666666669" width="393" height="650.33333333333326"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGq-9o-rxg" userLabel="SegmentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="41.666666666666664"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2C8-a7-cfi">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="42.666666666666664"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <segments>
+                                                    <segment title="Home"/>
+                                                    <segment title="Live"/>
+                                                    <segment title="Upcoming"/>
+                                                    <segment title="Recent"/>
+                                                </segments>
+                                                <color key="selectedSegmentTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="didChangeSegmentedValue:" destination="Y6W-OH-hqX" eventType="valueChanged" id="92a-aK-uQJ"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.086274509803921567" green="0.231372565" blue="0.40000003579999999" alpha="0.89741825331125824" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="2C8-a7-cfi" firstAttribute="centerY" secondItem="uGq-9o-rxg" secondAttribute="centerY" id="Esh-aq-8Zc"/>
+                                            <constraint firstItem="2C8-a7-cfi" firstAttribute="height" secondItem="uGq-9o-rxg" secondAttribute="height" id="Qcc-A9-pf0"/>
+                                            <constraint firstItem="2C8-a7-cfi" firstAttribute="leading" secondItem="uGq-9o-rxg" secondAttribute="leading" id="SNa-fd-kYN"/>
+                                            <constraint firstItem="2C8-a7-cfi" firstAttribute="centerX" secondItem="uGq-9o-rxg" secondAttribute="centerX" id="gGK-QV-PCg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="uGq-9o-rxg" firstAttribute="leading" secondItem="9e2-Ks-CUO" secondAttribute="leading" id="V9p-ib-4At"/>
+                                    <constraint firstAttribute="trailing" secondItem="uGq-9o-rxg" secondAttribute="trailing" id="iH6-JZ-A4n"/>
+                                    <constraint firstItem="uGq-9o-rxg" firstAttribute="top" secondItem="9e2-Ks-CUO" secondAttribute="top" id="rzQ-VE-ODd"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -48,14 +81,19 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9e2-Ks-CUO" secondAttribute="trailing" id="dG6-v5-4Kr"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="9e2-Ks-CUO" secondAttribute="bottom" id="jwE-oD-Wok"/>
                             <constraint firstItem="9e2-Ks-CUO" firstAttribute="top" secondItem="Kdx-Ak-hhw" secondAttribute="bottom" id="oBn-jy-MOW"/>
+                            <constraint firstItem="uGq-9o-rxg" firstAttribute="height" secondItem="Kdx-Ak-hhw" secondAttribute="height" multiplier="0.7" id="uZ5-1a-c0v"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="hM9-eh-saQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="2C8-a7-cfi" id="EPs-kg-qS4"/>
+                        <outlet property="topView" destination="Kdx-Ak-hhw" id="Zzy-at-tSF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124.42748091603053" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="-642" y="-23"/>
         </scene>
     </scenes>
     <resources>
