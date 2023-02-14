@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,25 +12,60 @@
         <!--Home-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController id="Y6W-OH-hqX" customClass="HomeVC" customModule="CricFreak" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdx-Ak-hhw">
+                                <rect key="frame" x="0.0" y="59" width="393" height="59.666666666666657"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CricFreak(logo-2)" translatesAutoresizingMaskIntoConstraints="NO" id="yCW-xs-l5n">
+                                        <rect key="frame" x="16" y="10.333333333333329" width="157.33333333333334" height="39"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="customBlue"/>
+                                <constraints>
+                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="width" secondItem="Kdx-Ak-hhw" secondAttribute="width" multiplier="0.4" id="Akl-zh-fem"/>
+                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="leading" secondItem="Kdx-Ak-hhw" secondAttribute="leading" constant="16" id="PLn-E2-0wj"/>
+                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="centerY" secondItem="Kdx-Ak-hhw" secondAttribute="centerY" id="l0L-gB-2lH"/>
+                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="height" secondItem="Kdx-Ak-hhw" secondAttribute="height" multiplier="0.65" id="rg4-4c-K3o"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9e2-Ks-CUO">
+                                <rect key="frame" x="0.0" y="118.66666666666669" width="393" height="650.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" name="customBlue"/>
+                        <constraints>
+                            <constraint firstItem="Kdx-Ak-hhw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7OH-F7-GfM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Kdx-Ak-hhw" secondAttribute="trailing" id="BKJ-Gn-Vgk"/>
+                            <constraint firstItem="Kdx-Ak-hhw" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.07" id="VLO-Nu-01r"/>
+                            <constraint firstItem="Kdx-Ak-hhw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="axN-ii-hVc"/>
+                            <constraint firstItem="9e2-Ks-CUO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bgd-qW-n4E"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9e2-Ks-CUO" secondAttribute="trailing" id="dG6-v5-4Kr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="9e2-Ks-CUO" secondAttribute="bottom" id="jwE-oD-Wok"/>
+                            <constraint firstItem="9e2-Ks-CUO" firstAttribute="top" secondItem="Kdx-Ak-hhw" secondAttribute="bottom" id="oBn-jy-MOW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="hM9-eh-saQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="-34"/>
+            <point key="canvasLocation" x="124.42748091603053" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CricFreak(logo-2)" width="66.666664123535156" height="21"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="customBlue">
+            <color red="0.086274504660000001" green="0.231372565" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
