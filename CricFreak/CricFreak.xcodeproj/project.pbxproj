@@ -81,19 +81,25 @@
 			path = Matches;
 			sourceTree = "<group>";
 		};
-		84583140299B8BC7003F06EB /* Shared */ = {
+		84583145299C7C98003F06EB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				84583141299B8BDC003F06EB /* Constants */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		84583141299B8BDC003F06EB /* Constants */ = {
+		84583146299C7CA5003F06EB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Constants;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84583147299C7CB0003F06EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		84FDA702299A6016008543D2 = {
@@ -117,10 +123,10 @@
 		84FDA70D299A6016008543D2 /* CricFreak */ = {
 			isa = PBXGroup;
 			children = (
-				84583140299B8BC7003F06EB /* Shared */,
+				84583147299C7CB0003F06EB /* Model */,
+				84583146299C7CA5003F06EB /* ViewModel */,
+				84583145299C7C98003F06EB /* Shared */,
 				84FDA72A299A66B8008543D2 /* CoreData */,
-				84FDA728299A6684008543D2 /* Models */,
-				84FDA727299A6673008543D2 /* ViewModel */,
 				84FDA726299A6661008543D2 /* View */,
 				84FDA725299A65A6008543D2 /* Delegate */,
 				84FDA729299A66A6008543D2 /* Storyboards */,
@@ -146,20 +152,6 @@
 				8458313A299B7FE3003F06EB /* Home */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		84FDA727299A6673008543D2 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		84FDA728299A6684008543D2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		84FDA729299A66A6008543D2 /* Storyboards */ = {

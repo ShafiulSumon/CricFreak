@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Matches-->
+        <!--Fixtures-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="MatchesVC" customModule="CricFreak" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Matches" image="_bats" id="Fa0-3d-mYP"/>
+                    <tabBarItem key="tabBarItem" title="Fixtures" image="calendar" catalog="system" id="Fa0-3d-mYP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +26,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="_bats" width="25" height="25"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
     </resources>
 </document>
