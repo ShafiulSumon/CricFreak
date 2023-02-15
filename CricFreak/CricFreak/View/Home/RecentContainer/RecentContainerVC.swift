@@ -11,6 +11,9 @@ class RecentContainerVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let recentContainerViewModel = RecentContainerViewModel()
+    var recentData: EasyRecentModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -18,5 +21,14 @@ class RecentContainerVC: UIViewController {
         
         let cellNib = UINib(nibName: Constants.RecentTblCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: Constants.recentNib)
+        
+        recentContainerViewModel.populateRecentTable()
+        
+        recentContainerViewModel.observable.binding() { [weak self] response in
+            DispatchQueue.main.async {
+                self?.recentData = Adapter.shared.convertToEasyForRecentTable(from: response)
+                self?.tableView.reloadData()
+            }
+        }
     }
 }
