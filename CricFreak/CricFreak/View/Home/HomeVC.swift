@@ -10,6 +10,12 @@ import UIKit
 class HomeVC: UIViewController {
     
 //MARK: - Outlets
+    
+    @IBOutlet weak var NetworkErrorContainer: UIView!
+    @IBOutlet weak var recentContainer: UIView!
+    @IBOutlet weak var upcomingContainer: UIView!
+    @IBOutlet weak var liveContainer: UIView!
+    @IBOutlet weak var homeContainer: UIView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var topView: UIView!
     
@@ -23,22 +29,12 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         setUpSegmentControl()
+        selectContainer(segmentIndex: -1)
     }
     
 //MARK: - Button Actions
     @IBAction func didChangeSegmentedValue(_ sender: UISegmentedControl) {
-        if(sender.selectedSegmentIndex == 0) {
-
-        }
-        else if(sender.selectedSegmentIndex == 1) {
-            
-        }
-        else if(sender.selectedSegmentIndex == 2) {
-            
-        }
-        else if(sender.selectedSegmentIndex == 3){
-            
-        }
+        selectContainer(segmentIndex: sender.selectedSegmentIndex)
     }
     
 //MARK: - All functions
@@ -51,6 +47,30 @@ class HomeVC: UIViewController {
 
         let selectedBackgroundImage = UIImage.imageWithColor(color: UIColor(named: "customBlue")!, size: CGSize(width: 1, height: 32)).imageWithBorder(width: 0, color: .blue, position: .bottom)
         segmentControl.setBackgroundImage(selectedBackgroundImage, for: .selected, barMetrics: .default)
+    }
+    
+    func selectContainer(segmentIndex: Int) {
+        homeContainer.alpha = 0
+        liveContainer.alpha = 0
+        upcomingContainer.alpha = 0
+        recentContainer.alpha = 0
+        NetworkErrorContainer.alpha = 0
+        
+        if segmentIndex == -1 {
+            NetworkErrorContainer.alpha = 1
+        }
+        else if segmentIndex == 0 {
+            homeContainer.alpha = 1
+        }
+        else if segmentIndex == 1 {
+            liveContainer.alpha = 1
+        }
+        else if segmentIndex == 2 {
+            upcomingContainer.alpha = 1
+        }
+        else if segmentIndex == 3 {
+            recentContainer.alpha = 1
+        }
     }
     
 }
