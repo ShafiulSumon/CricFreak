@@ -21,16 +21,6 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
         cell.teamBimg.layer.cornerRadius = 20
         cell.live.alpha = 0
         
-//        cell.labelOne.text = "India Tour of New Zealand"
-//        cell.labelTwo.text = "3rd ODI at Delhi Stadium"
-//        cell.teamAimg.image = UIImage(named: "argentina-flag")
-//        cell.teamBimg.image = UIImage(named: "brazil-flag")
-//        cell.teamA.text = "IND"
-//        cell.teamB.text = "NZ"
-//        cell.runA.text = "200-8(20)"
-//        cell.runB.text = "203-2(15.2)"
-//        cell.labelResult.text = "New Zealand won by 8 wickets"
-        
         cell.labelOne.text = recentData.data[indexPath.row].stage
         cell.labelTwo.text = recentData.data[indexPath.row].round + " at " + recentData.data[indexPath.row].venue + " [" + recentData.data[indexPath.row].matchDate + "]"
         
@@ -57,8 +47,6 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
         cell.runA.text = recentData.data[indexPath.row].localteamRun + recentData.data[indexPath.row].localteamWicket + "(" + recentData.data[indexPath.row].localteamOver + ")"
         cell.runB.text = recentData.data[indexPath.row].visitorteamRun + recentData.data[indexPath.row].visitorteamWicket + "(" + recentData.data[indexPath.row].visitorteamOver + ")"
         cell.labelResult.text = recentData.data[indexPath.row].note
-        
-        return cell
         
         return cell
     }

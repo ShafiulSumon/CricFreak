@@ -14,6 +14,7 @@ class RecentContainerVC: UIViewController {
     let recentContainerViewModel = RecentContainerViewModel()
     var recentData: EasyRecentModel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -21,6 +22,8 @@ class RecentContainerVC: UIViewController {
         
         let cellNib = UINib(nibName: Constants.RecentTblCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: Constants.recentNib)
+        
+        //print(UpcomingMatchURL.getURL())
         
         recentContainerViewModel.populateRecentTable()
         
