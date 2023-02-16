@@ -12,4 +12,5 @@ struct Constants {
     static let recentNib = "recentNib"
     static let UpcomingTblCell = "UpcomingTblCell"
     static let upcomingNib = "upcomingNib"
+    static let collCell = "collCell"
 }

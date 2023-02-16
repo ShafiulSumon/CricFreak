@@ -30,7 +30,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         setUpSegmentControl()
-        selectContainer(segmentIndex: -1)
+        selectContainer(segmentIndex: 0)
     }
     
 //MARK: - Button Actions

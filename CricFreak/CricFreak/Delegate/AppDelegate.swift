@@ -16,8 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        CountryFlags.shared.getAllCountry()
+        let countryUrl = CountryFlagURL.getURL()
         
+        HttpUtility.shared.getDataFromAPI(url: countryUrl) { (countryResult: Result<CountryModel,Error>) in
+            
+            switch countryResult {
+            case .success(let res):
+                CountryFlags.shared.getAllCountry(res: res)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        sleep(2)
         return true
     }
 

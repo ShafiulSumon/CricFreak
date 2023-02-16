@@ -16,14 +16,8 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.upcomingNib, for: indexPath) as! UpcomingTblCell
         
         cell.stackView.layer.cornerRadius = 10
-        cell.TeamAimg.layer.cornerRadius = 10
-        cell.TeamBimg.layer.cornerRadius = 10
-        
-//        cell.LabelOne.text = "New Zealand tour of India"
-//        cell.LabelTwo.text = "Starts at 2023-03-20"
-//        cell.LabelThree.text = "Delhi Stadium"
-//        cell.TeamA.text = "Argentina"
-//        cell.TeamB.text = "Brazil"
+        cell.TeamAimg.layer.cornerRadius = 20
+        cell.TeamBimg.layer.cornerRadius = 20
         
         cell.LabelOne.text = upcomingData.data[indexPath.row].stage
         cell.LabelTwo.text = upcomingData.data[indexPath.row].matchDate
@@ -46,13 +40,9 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
             cell.TeamAimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].localteamImg))
             cell.TeamBimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].visitorteamImg))
         }
-        
-//        cell.TeamAimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].localteamImg))
-//        cell.TeamBimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].visitorteamImg))
-        
+
         cell.LabelThree.text = upcomingData.data[indexPath.row].venue
-        
-        
+                
         return cell
     }
     
