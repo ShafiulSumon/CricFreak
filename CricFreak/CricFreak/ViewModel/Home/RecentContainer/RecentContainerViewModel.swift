@@ -8,6 +8,7 @@
 import Foundation
 
 class RecentContainerViewModel {
+    
     var observable = ObservableObject<RecentModel>()
     var countryFlagImg: [String : String] = [:]
     

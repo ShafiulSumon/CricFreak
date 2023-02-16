@@ -22,7 +22,7 @@ final class Adapter {
             res.localteamId = (val.data?[i].localteam?.id) ?? -1
             res.visitorteamId = (val.data?[i].visitorteam?.id) ?? -1
             res.leagueID = (val.data?[i].leagueID) ?? -1
-            res.stage = val.data?[i].stage?.name?.rawValue ?? "Unknown"
+            res.stage = val.data?[i].stage?.name ?? "Unknown"
             res.round = val.data?[i].round ?? "Unknown"
             res.matchDate = String(val.data?[i].startingAt?.prefix(10) ?? "YYYY-MM-dd")
             res.venue = val.data?[i].venue?.name ?? "Unknown Place"
@@ -33,48 +33,51 @@ final class Adapter {
             res.localteamName = val.data?[i].localteam?.name ?? ""
             res.visitorteamName = val.data?[i].visitorteam?.name ?? ""
             
-            if(val.data?[i].runs?[0].id == val.data?[i].localteam?.id) {
-                res.localteamRun = String(val.data?[i].runs?[0].score ?? 0)
-                res.localteamWicket = String(val.data?[i].runs?[0].wickets ?? 0)
-                if(res.localteamWicket == "10") {
-                    res.localteamWicket = ""
+            if(val.data?[i].runs?.isEmpty == false) {
+                if(val.data?[i].runs?[0].id == val.data?[i].localteam?.id) {
+                    res.localteamRun = String(val.data?[i].runs?[0].score ?? 0)
+                    res.localteamWicket = String(val.data?[i].runs?[0].wickets ?? 0)
+                    if(res.localteamWicket == "10") {
+                        res.localteamWicket = ""
+                    }
+                    else {
+                        res.localteamWicket = "-" + res.localteamWicket
+                    }
+                    res.localteamOver = String(val.data?[i].runs?[0].overs ?? 0)
+                    
+                    res.visitorteamRun = String(val.data?[i].runs?[1].score ?? 0)
+                    res.visitorteamWicket = String(val.data?[i].runs?[1].wickets ?? 0)
+                    if(res.visitorteamWicket == "10") {
+                        res.visitorteamWicket = ""
+                    }
+                    else {
+                        res.visitorteamWicket = "-" + res.visitorteamWicket
+                    }
+                    res.visitorteamOver = String(val.data?[i].runs?[1].overs ?? 0)
                 }
                 else {
-                    res.localteamWicket = "-" + res.localteamWicket
+                    res.localteamRun = String(val.data?[i].runs?[1].score ?? 0)
+                    res.localteamWicket = String(val.data?[i].runs?[1].wickets ?? 0)
+                    if(res.localteamWicket == "10") {
+                        res.localteamWicket = ""
+                    }
+                    else {
+                        res.localteamWicket = "-" + res.localteamWicket
+                    }
+                    res.localteamOver = String(val.data?[i].runs?[1].overs ?? 0)
+                    
+                    res.visitorteamRun = String(val.data?[i].runs?[0].score ?? 0)
+                    res.visitorteamWicket = String(val.data?[i].runs?[0].wickets ?? 0)
+                    if(res.visitorteamWicket == "10") {
+                        res.visitorteamWicket = ""
+                    }
+                    else {
+                        res.visitorteamWicket = "-" + res.visitorteamWicket
+                    }
+                    res.visitorteamOver = String(val.data?[i].runs?[0].overs ?? 0)
                 }
-                res.localteamOver = String(val.data?[i].runs?[0].overs ?? 0)
-                
-                res.visitorteamRun = String(val.data?[i].runs?[1].score ?? 0)
-                res.visitorteamWicket = String(val.data?[i].runs?[1].wickets ?? 0)
-                if(res.visitorteamWicket == "10") {
-                    res.visitorteamWicket = ""
-                }
-                else {
-                    res.visitorteamWicket = "-" + res.visitorteamWicket
-                }
-                res.visitorteamOver = String(val.data?[i].runs?[1].overs ?? 0)
             }
-            else {
-                res.localteamRun = String(val.data?[i].runs?[1].score ?? 0)
-                res.localteamWicket = String(val.data?[i].runs?[1].wickets ?? 0)
-                if(res.localteamWicket == "10") {
-                    res.localteamWicket = ""
-                }
-                else {
-                    res.localteamWicket = "-" + res.localteamWicket
-                }
-                res.localteamOver = String(val.data?[i].runs?[1].overs ?? 0)
-                
-                res.visitorteamRun = String(val.data?[i].runs?[0].score ?? 0)
-                res.visitorteamWicket = String(val.data?[i].runs?[0].wickets ?? 0)
-                if(res.visitorteamWicket == "10") {
-                    res.visitorteamWicket = ""
-                }
-                else {
-                    res.visitorteamWicket = "-" + res.visitorteamWicket
-                }
-                res.visitorteamOver = String(val.data?[i].runs?[0].overs ?? 0)
-            }
+            
             res.note = val.data?[i].note ?? "No result found!"
             
             result.data.append(res)

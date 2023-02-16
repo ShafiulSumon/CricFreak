@@ -22,6 +22,6 @@ struct UpcomingMatchURL {
         let to = dateFormatter.string(from: date2!)
         
         
-        return "https://cricket.sportmonks.com/api/v2.0/fixtures?fields[fixtures]=league_id,round,note,starting_at,status&include=stage,venue,localteam,visitorteam,runs&sort=-starting_at&fields[stages]=name&fields[teams]=name,code,image_path&api_token=yUQG6zjv4Bi5RtX9NMxzxISx2ehPcIkYMNBBpcDwgQ4R3f7Qa4igmoBR2W0I&filter[starts_between]=\(from)"+","+"\(to)"
+        return "https://cricket.sportmonks.com/api/v2.0/fixtures?fields[fixtures]=league_id,round,note,starting_at,status&include=stage,venue,localteam,visitorteam,runs&sort=starting_at&fields[stages]=name&fields[teams]=name,code,image_path&api_token=yUQG6zjv4Bi5RtX9NMxzxISx2ehPcIkYMNBBpcDwgQ4R3f7Qa4igmoBR2W0I&filter[starts_between]=\(from)"+","+"\(to)"
     }
 }
