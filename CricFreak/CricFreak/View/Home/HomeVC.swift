@@ -22,6 +22,7 @@ class HomeVC: UIViewController {
 //MARK: - WillAppear
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
+        //UIApplication.shared.win
     }
 
 //MARK: - ViewDidLoad
@@ -50,26 +51,26 @@ class HomeVC: UIViewController {
     }
     
     func selectContainer(segmentIndex: Int) {
-        homeContainer.alpha = 0
-        liveContainer.alpha = 0
-        upcomingContainer.alpha = 0
-        recentContainer.alpha = 0
-        NetworkErrorContainer.alpha = 0
+        homeContainer.isHidden = true
+        liveContainer.isHidden = true
+        upcomingContainer.isHidden = true
+        recentContainer.isHidden = true
+        NetworkErrorContainer.isHidden = true
         
         if segmentIndex == -1 {
-            NetworkErrorContainer.alpha = 1
+            NetworkErrorContainer.isHidden = false
         }
         else if segmentIndex == 0 {
-            homeContainer.alpha = 1
+            homeContainer.isHidden = false
         }
         else if segmentIndex == 1 {
-            liveContainer.alpha = 1
+            liveContainer.isHidden = false
         }
         else if segmentIndex == 2 {
-            upcomingContainer.alpha = 1
+            upcomingContainer.isHidden = false
         }
         else if segmentIndex == 3 {
-            recentContainer.alpha = 1
+            recentContainer.isHidden = false
         }
     }
     

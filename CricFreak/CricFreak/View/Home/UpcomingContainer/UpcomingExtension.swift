@@ -16,8 +16,8 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.upcomingNib, for: indexPath) as! UpcomingTblCell
         
         cell.stackView.layer.cornerRadius = 10
-        cell.TeamAimg.layer.cornerRadius = 25
-        cell.TeamBimg.layer.cornerRadius = 25
+        cell.TeamAimg.layer.cornerRadius = 10
+        cell.TeamBimg.layer.cornerRadius = 10
         
 //        cell.LabelOne.text = "New Zealand tour of India"
 //        cell.LabelTwo.text = "Starts at 2023-03-20"
@@ -30,29 +30,41 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
         cell.TeamA.text = upcomingData.data[indexPath.row].localteamCode
         cell.TeamB.text = upcomingData.data[indexPath.row].visitorteamCode
         
-//        if(upcomingData.data[indexPath.row].leagueID == 3) {
-//            var x = RecentContainerViewModel.shared.countryFlagImg[recentData.data[indexPath.row].localteamName]
-//            var y = recentContainerViewModel.countryFlagImg[recentData.data[indexPath.row].visitorteamName]
-//            if(upcomingData.data[indexPath.row].localteamName == "Ireland") {
-//                x = recentContainerViewModel.countryFlagImg["Republic of Ireland"]
-//            }
-//            if(upcomingData.data[indexPath.row].visitorteamName == "Ireland") {
-//                y = recentContainerViewModel.countryFlagImg["Republic of Ireland"]
-//            }
-//            cell.TeamAimg.sd_setImage(with: URL(string: x ?? ""))
-//            cell.TeamBimg.sd_setImage(with: URL(string: y ?? ""))
-//        }
-//        else {
-//            cell.TeamAimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].localteamImg))
-//            cell.TeamBimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].visitorteamImg))
-//        }
+        if(upcomingData.data[indexPath.row].leagueID == 3) {
+            var x = CountryFlags.shared.countryFlagImg[upcomingData.data[indexPath.row].localteamName]
+            var y = CountryFlags.shared.countryFlagImg[upcomingData.data[indexPath.row].visitorteamName]
+            if(upcomingData.data[indexPath.row].localteamName == "Ireland") {
+                x = CountryFlags.shared.countryFlagImg["Republic of Ireland"]
+            }
+            if(upcomingData.data[indexPath.row].visitorteamName == "Ireland") {
+                y = CountryFlags.shared.countryFlagImg["Republic of Ireland"]
+            }
+            cell.TeamAimg.sd_setImage(with: URL(string: x ?? ""))
+            cell.TeamBimg.sd_setImage(with: URL(string: y ?? ""))
+        }
+        else {
+            cell.TeamAimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].localteamImg))
+            cell.TeamBimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].visitorteamImg))
+        }
         
-        cell.TeamAimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].localteamImg))
-        cell.TeamBimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].visitorteamImg))
+//        cell.TeamAimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].localteamImg))
+//        cell.TeamBimg.sd_setImage(with: URL(string: upcomingData.data[indexPath.row].visitorteamImg))
         
         cell.LabelThree.text = upcomingData.data[indexPath.row].venue
         
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Set the initial state of the cell
+        cell.alpha = 0
+        cell.transform = CGAffineTransform(translationX: 0, y: 50)
+        
+        // Animate the cell to its final state
+        UIView.animate(withDuration: 0.2, delay: 0.07 * Double(indexPath.row), options: [.curveEaseOut], animations: {
+            cell.alpha = 1
+            cell.transform = .identity
+        }, completion: nil)
     }
 }

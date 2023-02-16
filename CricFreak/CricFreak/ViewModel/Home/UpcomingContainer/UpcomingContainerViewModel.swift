@@ -20,7 +20,6 @@ class UpcomingContainerViewModel {
             switch response {
             case .success(let result) :
                 self?.observable.result = result
-                dump(result)
             case .failure(let error) :
                 print(error)
             }

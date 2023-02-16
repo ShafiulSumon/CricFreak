@@ -26,13 +26,13 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
         
         
         if(recentData.data[indexPath.row].leagueID == 3) {
-            var x = recentContainerViewModel.countryFlagImg[recentData.data[indexPath.row].localteamName]
-            var y = recentContainerViewModel.countryFlagImg[recentData.data[indexPath.row].visitorteamName]
+            var x = CountryFlags.shared.countryFlagImg[recentData.data[indexPath.row].localteamName]
+            var y = CountryFlags.shared.countryFlagImg[recentData.data[indexPath.row].visitorteamName]
             if(recentData.data[indexPath.row].localteamName == "Ireland") {
-                x = recentContainerViewModel.countryFlagImg["Republic of Ireland"]
+                x = CountryFlags.shared.countryFlagImg["Republic of Ireland"]
             }
             if(recentData.data[indexPath.row].visitorteamName == "Ireland") {
-                y = recentContainerViewModel.countryFlagImg["Republic of Ireland"]
+                y = CountryFlags.shared.countryFlagImg["Republic of Ireland"]
             }
             cell.teamAimg.sd_setImage(with: URL(string: x ?? ""))
             cell.teamBimg.sd_setImage(with: URL(string: y ?? ""))
@@ -49,5 +49,17 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
         cell.labelResult.text = recentData.data[indexPath.row].note
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Set the initial state of the cell
+        cell.alpha = 0
+        cell.transform = CGAffineTransform(translationX: 0, y: 50)
+        
+        // Animate the cell to its final state
+        UIView.animate(withDuration: 0.2, delay: 0.07 * Double(indexPath.row), options: [.curveEaseOut], animations: {
+            cell.alpha = 1
+            cell.transform = .identity
+        }, completion: nil)
     }
 }
