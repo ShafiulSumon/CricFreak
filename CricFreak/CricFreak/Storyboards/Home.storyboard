@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SkV-i1-iSS">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--HomeVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="HomeVC" customModule="CricFreak" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdx-Ak-hhw" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="59" width="393" height="59.666666666666657"/>
+                                <rect key="frame" x="0.0" y="103.00000000000001" width="393" height="59.666666666666671"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CricFreak(logo-2)" translatesAutoresizingMaskIntoConstraints="NO" id="yCW-xs-l5n">
                                         <rect key="frame" x="16" y="7.3333333333333286" width="157.33333333333334" height="45"/>
@@ -34,7 +34,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9e2-Ks-CUO">
-                                <rect key="frame" x="0.0" y="118.66666666666669" width="393" height="650.33333333333326"/>
+                                <rect key="frame" x="0.0" y="162.66666666666669" width="393" height="606.33333333333326"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGq-9o-rxg" userLabel="SegmentView">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="41.666666666666664"/>
@@ -63,31 +63,31 @@
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8R-I9-4Eq">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="608"/>
+                                        <rect key="frame" x="0.0" y="42" width="393" height="564"/>
                                         <connections>
                                             <segue destination="v64-Zy-hQV" kind="embed" id="DsS-ME-8V7"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyG-Dn-ysI">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="608"/>
+                                        <rect key="frame" x="0.0" y="-2" width="393" height="564"/>
                                         <connections>
                                             <segue destination="gwz-bH-WwN" kind="embed" id="u6B-wR-NTm"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Vj-nm-4aZ">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="608"/>
+                                        <rect key="frame" x="0.0" y="42" width="393" height="564"/>
                                         <connections>
                                             <segue destination="mb5-OO-9Dg" kind="embed" id="yig-O6-qqo"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngU-iR-R4N">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="608"/>
+                                        <rect key="frame" x="0.0" y="42" width="393" height="564"/>
                                         <connections>
                                             <segue destination="LVA-9s-Feg" kind="embed" id="tKe-ga-vT2"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCY-6Y-5ub">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="608"/>
+                                        <rect key="frame" x="0.0" y="42" width="393" height="564"/>
                                         <connections>
                                             <segue destination="aWS-0r-SC1" kind="embed" id="2x5-sn-aq4"/>
                                         </connections>
@@ -135,7 +135,7 @@
                             <constraint firstItem="uGq-9o-rxg" firstAttribute="height" secondItem="Kdx-Ak-hhw" secondAttribute="height" multiplier="0.7" id="uZ5-1a-c0v"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="hM9-eh-saQ"/>
+                    <navigationItem key="navigationItem" id="Gft-6x-22i"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="NetworkErrorContainer" destination="lCY-6Y-5ub" id="d9S-mv-4vH"/>
@@ -145,22 +145,39 @@
                         <outlet property="segmentControl" destination="2C8-a7-cfi" id="EPs-kg-qS4"/>
                         <outlet property="topView" destination="Kdx-Ak-hhw" id="Zzy-at-tSF"/>
                         <outlet property="upcomingContainer" destination="5Vj-nm-4aZ" id="lFZ-4l-lvr"/>
+                        <segue destination="pRB-5J-ldY" kind="show" identifier="goToDetailsPage" id="Y0c-SM-mh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1138" y="326"/>
+            <point key="canvasLocation" x="-211.4503816793893" y="325.35211267605638"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qp0-cj-m1Z">
+            <objects>
+                <viewController id="pRB-5J-ldY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1qV-5o-lkd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7Jg-LU-4IQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YTs-Jz-eA2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="APW-aC-Mpl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2743" y="325"/>
         </scene>
         <!--Home ContainerVC-->
         <scene sceneID="Lgt-Y3-bNd">
             <objects>
                 <viewController id="v64-Zy-hQV" customClass="HomeContainerVC" customModule="CricFreak" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="595-l9-vzE" userLabel="blueView">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="608"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="564"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Ey-P0-RcX">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="182.33333333333334"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="169.33333333333334"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UTT-VQ-FV4">
                                     <size key="itemSize" width="390" height="209.33333333333334"/>
@@ -170,7 +187,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collCell" id="GiP-7Y-8Qx" customClass="TopCollCell" customModule="CricFreak" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-13.666666666666666" width="390" height="209.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="-20" width="390" height="209.33333333333334"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xcG-1G-7ru">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="209.33333333333334"/>
@@ -361,7 +378,7 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NeQ-bP-iQD">
-                                <rect key="frame" x="0.0" y="182" width="393" height="426"/>
+                                <rect key="frame" x="0.0" y="169.33333333333334" width="393" height="394.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gNN-Nn-aUM" style="IBUITableViewCellStyleDefault" id="h57-IU-lw9">
@@ -404,32 +421,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAt-7d-V8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739.69465648854964" y="-675.35211267605632"/>
+            <point key="canvasLocation" x="-1137" y="1289"/>
         </scene>
         <!--Live ContainerVC-->
         <scene sceneID="iv0-Hw-cZq">
             <objects>
                 <viewController id="gwz-bH-WwN" customClass="LiveContainerVC" customModule="CricFreak" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1vh-EF-gGv" userLabel="greenView">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="608"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="564"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qok-O4-hlw">
+                                <rect key="frame" x="46" y="172.33333333333331" width="301" height="219.33333333333331"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad-face" translatesAutoresizingMaskIntoConstraints="NO" id="411-Pb-1dv">
+                                        <rect key="frame" x="22.666666666666671" y="0.0" width="255.66666666666663" height="169"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cp-CR-rjZ">
+                                        <rect key="frame" x="26.666666666666686" y="184.99999999999997" width="248" height="34.333333333333343"/>
+                                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sorry! No live match available"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qok-O4-hlw" firstAttribute="centerX" secondItem="1vh-EF-gGv" secondAttribute="centerX" id="LWI-1b-VrM"/>
+                            <constraint firstItem="qok-O4-hlw" firstAttribute="leading" secondItem="1vh-EF-gGv" secondAttribute="leadingMargin" constant="30" id="SWv-yh-qGV"/>
+                            <constraint firstItem="411-Pb-1dv" firstAttribute="width" secondItem="1vh-EF-gGv" secondAttribute="width" multiplier="0.65" id="jV3-kj-KMh"/>
+                            <constraint firstItem="411-Pb-1dv" firstAttribute="height" secondItem="1vh-EF-gGv" secondAttribute="height" multiplier="0.3" id="l51-nD-Bu1"/>
+                            <constraint firstItem="qok-O4-hlw" firstAttribute="centerY" secondItem="1vh-EF-gGv" secondAttribute="centerY" id="wtP-c3-Pxw"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SF5-CV-ryY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="-64"/>
+            <point key="canvasLocation" x="-320" y="1289"/>
         </scene>
         <!--Upcoming ContainerVC-->
         <scene sceneID="qqz-Qw-lEO">
             <objects>
                 <viewController id="mb5-OO-9Dg" customClass="UpcomingContainerVC" customModule="CricFreak" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X6p-BJ-Kwi">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="608"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="564"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kxb-oj-N31">
-                                <rect key="frame" x="16" y="59" width="361" height="549"/>
+                                <rect key="frame" x="16" y="59" width="361" height="505"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
                         </subviews>
@@ -447,18 +488,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iv-KI-J6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="587"/>
+            <point key="canvasLocation" x="512" y="1289"/>
         </scene>
         <!--Recent ContainerVC-->
         <scene sceneID="oRS-Ro-pHP">
             <objects>
                 <viewController id="LVA-9s-Feg" customClass="RecentContainerVC" customModule="CricFreak" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z0v-BW-FoY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="608"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="564"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="89N-La-yV4">
-                                <rect key="frame" x="16" y="59" width="361" height="549"/>
+                                <rect key="frame" x="16" y="59" width="361" height="505"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
                         </subviews>
@@ -476,24 +517,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOA-T9-NZL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="1290"/>
+            <point key="canvasLocation" x="1384" y="1289"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FWE-uB-11X">
             <objects>
                 <viewController id="aWS-0r-SC1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hQY-xI-bbz">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="608"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="564"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hir-HF-jBP">
-                                <rect key="frame" x="116" y="131.66666666666666" width="161" height="204.99999999999997"/>
+                                <rect key="frame" x="116" y="109.66666666666669" width="161" height="205"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet" translatesAutoresizingMaskIntoConstraints="NO" id="4gb-19-wAX">
                                         <rect key="frame" x="0.0" y="0.0" width="161" height="170.66666666666666"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2T-FS-iwA">
-                                        <rect key="frame" x="20.666666666666657" y="170.66666666666666" width="120" height="34.333333333333343"/>
+                                        <rect key="frame" x="20.666666666666657" y="170.66666666666663" width="120" height="34.333333333333343"/>
                                         <color key="backgroundColor" systemColor="systemMintColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="tLm-2q-2Mx"/>
@@ -519,7 +560,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbZ-Mg-8dR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1098" y="1223"/>
+            <point key="canvasLocation" x="-1967" y="1289"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="SvS-ZH-Xbz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SkV-i1-iSS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="hM9-eh-saQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W08-9U-NrQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="ZLJ-zD-BqP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PgO-Ao-QfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1138.1679389312976" y="325.35211267605638"/>
         </scene>
     </scenes>
     <resources>
@@ -529,6 +589,7 @@
         <image name="brazil-flag" width="213.33332824707031" height="149.33332824707031"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="no-internet" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="sad-face" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="customBlue">
             <color red="0.086000002920627594" green="0.23100000619888306" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -537,9 +598,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
