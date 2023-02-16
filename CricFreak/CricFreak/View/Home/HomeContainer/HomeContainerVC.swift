@@ -10,12 +10,18 @@ import UIKit
 class HomeContainerVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topConstraints: NSLayoutConstraint!
+    
     
     let upcomingContainerViewModel = UpcomingContainerViewModel()
     var upcomingData: EasyRecentModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         

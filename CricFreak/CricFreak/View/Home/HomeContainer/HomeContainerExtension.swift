@@ -51,4 +51,41 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // Set the initial state of the cell
+        cell.alpha = 0
+        cell.transform = CGAffineTransform(translationX: 0, y: -50)
+        
+        // Animate the cell to its final state
+        UIView.animate(withDuration: 0.5, delay: 0.1 * Double(indexPath.item), options: [.curveEaseInOut], animations: {
+            cell.alpha = 1
+            cell.transform = .identity
+        }, completion: nil)
+    }
+}
+
+extension HomeContainerVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 30
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+        if y > 0 {
+            UIView.animate(withDuration: 0.4) {
+                self.collectionView.alpha = 0
+                self.topConstraints.constant = -(self.collectionView.bounds.size.height)
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.4) {
+                self.topConstraints.constant = 0
+                self.collectionView.alpha = 1
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
 }

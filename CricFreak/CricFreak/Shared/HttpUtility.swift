@@ -17,7 +17,7 @@ final class HttpUtility {
         
         let session = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                print(error)
+                completion(.failure(error))
             }
             else {
                 guard let data = data else { return }
@@ -26,7 +26,6 @@ final class HttpUtility {
                     completion(.success(result))
                 }
                 catch {
-                    print(error)
                     completion(.failure(error))
                 }
             }

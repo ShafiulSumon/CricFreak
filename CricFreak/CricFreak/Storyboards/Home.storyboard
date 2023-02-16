@@ -360,17 +360,46 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NeQ-bP-iQD">
+                                <rect key="frame" x="0.0" y="182" width="393" height="426"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gNN-Nn-aUM" style="IBUITableViewCellStyleDefault" id="h57-IU-lw9">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h57-IU-lw9" id="GhB-N6-8AK">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gNN-Nn-aUM">
+                                                    <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NeQ-bP-iQD" firstAttribute="top" secondItem="3Ey-P0-RcX" secondAttribute="bottom" id="Hhc-CG-9bU"/>
                             <constraint firstAttribute="trailing" secondItem="3Ey-P0-RcX" secondAttribute="trailing" id="O7g-qj-C5s"/>
                             <constraint firstItem="3Ey-P0-RcX" firstAttribute="height" secondItem="595-l9-vzE" secondAttribute="height" multiplier="0.3" id="UQK-4d-bfI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="NeQ-bP-iQD" secondAttribute="bottom" id="W7q-nx-dDn"/>
+                            <constraint firstItem="NeQ-bP-iQD" firstAttribute="leading" secondItem="595-l9-vzE" secondAttribute="leadingMargin" constant="-16" id="WdP-A7-Xrf"/>
                             <constraint firstItem="3Ey-P0-RcX" firstAttribute="leading" secondItem="595-l9-vzE" secondAttribute="leading" id="eOJ-D5-Z2C"/>
                             <constraint firstItem="3Ey-P0-RcX" firstAttribute="top" secondItem="595-l9-vzE" secondAttribute="top" id="rdw-1x-BzB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NeQ-bP-iQD" secondAttribute="trailing" constant="-16" id="sp3-76-4Kv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="3Ey-P0-RcX" id="1lQ-pO-wqu"/>
+                        <outlet property="tableView" destination="NeQ-bP-iQD" id="aLB-Yj-okz"/>
+                        <outlet property="topConstraints" destination="Hhc-CG-9bU" id="zgH-Rr-CCO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAt-7d-V8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
