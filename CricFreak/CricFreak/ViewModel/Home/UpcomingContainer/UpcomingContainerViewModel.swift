@@ -25,4 +25,8 @@ class UpcomingContainerViewModel {
             }
         }
     }
+    
+    func setFixtureId(with fixtureID: Int) {
+        HomeViewModel.shared.observable.result = fixtureID
+    }
 }

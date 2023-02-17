@@ -57,4 +57,13 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
             cell.transform = .identity
         }, completion: nil)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Details", bundle: nil)
+        if let detailsVC = storyboard.instantiateViewController(withIdentifier: Constants.DetailsVC) as? DetailsVC {
+            detailsVC.loadViewIfNeeded()
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }
+        upcomingContainerViewModel.setFixtureId(with: upcomingData.data[indexPath.row].id)
+    }
 }

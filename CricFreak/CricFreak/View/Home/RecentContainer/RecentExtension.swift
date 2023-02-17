@@ -64,6 +64,11 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constants.goToDetailsPage, sender: nil)
+        let storyboard = UIStoryboard(name: "Details", bundle: nil)
+        if let detailsVC = storyboard.instantiateViewController(withIdentifier: Constants.DetailsVC) as? DetailsVC {
+            detailsVC.loadViewIfNeeded()
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }
+        recentContainerViewModel.setFixtureId(with: recentData.data[indexPath.row].id)
     }
 }

@@ -145,28 +145,11 @@
                         <outlet property="segmentControl" destination="2C8-a7-cfi" id="EPs-kg-qS4"/>
                         <outlet property="topView" destination="Kdx-Ak-hhw" id="Zzy-at-tSF"/>
                         <outlet property="upcomingContainer" destination="5Vj-nm-4aZ" id="lFZ-4l-lvr"/>
-                        <segue destination="pRB-5J-ldY" kind="show" identifier="goToDetailsPage" id="Y0c-SM-mh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-211.4503816793893" y="325.35211267605638"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="qp0-cj-m1Z">
-            <objects>
-                <viewController id="pRB-5J-ldY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1qV-5o-lkd">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="7Jg-LU-4IQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="YTs-Jz-eA2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="APW-aC-Mpl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2743" y="325"/>
         </scene>
         <!--Home ContainerVC-->
         <scene sceneID="Lgt-Y3-bNd">

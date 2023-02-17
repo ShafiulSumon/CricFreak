@@ -13,5 +13,5 @@ struct Constants {
     static let UpcomingTblCell = "UpcomingTblCell"
     static let upcomingNib = "upcomingNib"
     static let collCell = "collCell"
-    static let goToDetailsPage = "goToDetailsPage"
+    static let DetailsVC = "DetailsVC"
 }

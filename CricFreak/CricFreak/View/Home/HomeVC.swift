@@ -21,6 +21,7 @@ class HomeVC: UIViewController {
     
 //MARK: - WillAppear
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
         UIApplication.shared.statusBarStyle = .lightContent
         //UIApplication.shared.win
     }

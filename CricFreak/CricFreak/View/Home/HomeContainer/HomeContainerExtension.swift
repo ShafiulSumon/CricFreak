@@ -63,6 +63,15 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
             cell.transform = .identity
         }, completion: nil)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Details", bundle: nil)
+        if let detailsVC = storyboard.instantiateViewController(withIdentifier: Constants.DetailsVC) as? DetailsVC {
+            detailsVC.loadViewIfNeeded()
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }
+        upcomingContainerViewModel.setFixtureId(with: upcomingData.data[indexPath.row].id)
+    }
 }
 
 extension HomeContainerVC: UITableViewDataSource, UITableViewDelegate {

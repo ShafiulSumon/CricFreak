@@ -26,4 +26,8 @@ class RecentContainerViewModel {
             }
         }
     }
+    
+    func setFixtureId(with fixtureID: Int) {
+        HomeViewModel.shared.observable.result = fixtureID
+    }
 }
