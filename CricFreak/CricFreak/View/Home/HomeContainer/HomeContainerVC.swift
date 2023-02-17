@@ -26,7 +26,7 @@ class HomeContainerVC: UIViewController {
         collectionView.dataSource = self
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: collectionView.bounds.width * 0.9, height: collectionView.bounds.height * 0.85)
+        layout.itemSize = CGSize(width: collectionView.bounds.width * 0.9, height: collectionView.bounds.height * 0.95)
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
         

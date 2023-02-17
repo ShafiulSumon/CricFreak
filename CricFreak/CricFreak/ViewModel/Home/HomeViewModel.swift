@@ -11,6 +11,6 @@ class HomeViewModel {
     static let shared = HomeViewModel()
     private init() {}
     
-    var observable = ObservableObject<Int>()
+    var observable = ObservableObject<RecentTableData>()
     
 }

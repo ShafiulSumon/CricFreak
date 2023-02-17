@@ -21,6 +21,8 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
         cell.teamBimg.layer.cornerRadius = 20
         
         cell.LabelOne.text = upcomingData.data[indexPath.row].stage
+        cell.live.layer.cornerRadius = 5
+        cell.live.isHidden = false
         cell.notify.isHidden = false
         cell.teamA.text = upcomingData.data[indexPath.row].localteamCode
         cell.teamB.text = upcomingData.data[indexPath.row].visitorteamCode
@@ -70,7 +72,7 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
             detailsVC.loadViewIfNeeded()
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }
-        upcomingContainerViewModel.setFixtureId(with: upcomingData.data[indexPath.row].id)
+        upcomingContainerViewModel.setData(with: upcomingData.data[indexPath.row])
     }
 }
 

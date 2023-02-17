@@ -19,7 +19,6 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
         cell.stackView.layer.masksToBounds = true
         cell.teamAimg.layer.cornerRadius = 20
         cell.teamBimg.layer.cornerRadius = 20
-        cell.live.alpha = 0
         
         cell.labelOne.text = recentData.data[indexPath.row].stage
         cell.labelTwo.text = recentData.data[indexPath.row].round + " at " + recentData.data[indexPath.row].venue + " [" + recentData.data[indexPath.row].matchDate + "]"
@@ -69,6 +68,6 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
             detailsVC.loadViewIfNeeded()
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }
-        recentContainerViewModel.setFixtureId(with: recentData.data[indexPath.row].id)
+        recentContainerViewModel.setData(with: recentData.data[indexPath.row])
     }
 }

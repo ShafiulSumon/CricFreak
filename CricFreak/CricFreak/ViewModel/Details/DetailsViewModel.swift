@@ -8,11 +8,11 @@
 import Foundation
 
 class DetailsViewModel {
-    var observable = ObservableObject<Int>()
+    var observable = ObservableObject<RecentTableData>()
     
     func receiveFixtureId() {
-        HomeViewModel.shared.observable.binding() { [weak self] id in
-            self?.observable.result = id
+        HomeViewModel.shared.observable.binding() { [weak self] data in
+            self?.observable.result = data
         }
     }
 }

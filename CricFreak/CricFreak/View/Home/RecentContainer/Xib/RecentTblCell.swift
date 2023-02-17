@@ -13,7 +13,6 @@ class RecentTblCell: UITableViewCell {
     @IBOutlet weak var stackView: UIStackView!
     
     
-    @IBOutlet weak var live: UILabel!
     @IBOutlet weak var labelOne: UILabel!
     
     @IBOutlet weak var labelTwo: UILabel!

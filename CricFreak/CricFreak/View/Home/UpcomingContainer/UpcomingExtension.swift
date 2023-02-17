@@ -64,6 +64,6 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
             detailsVC.loadViewIfNeeded()
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }
-        upcomingContainerViewModel.setFixtureId(with: upcomingData.data[indexPath.row].id)
+        upcomingContainerViewModel.setData(with: upcomingData.data[indexPath.row])
     }
 }

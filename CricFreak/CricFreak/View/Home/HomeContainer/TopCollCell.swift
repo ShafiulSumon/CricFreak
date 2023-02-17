@@ -10,7 +10,7 @@ import UIKit
 class TopCollCell: UICollectionViewCell {
     
     @IBOutlet weak var bgView: UIView!
-    
+    @IBOutlet weak var live: UIButton!
     @IBOutlet weak var LabelRes: UILabel!
     @IBOutlet weak var LabelOne: UILabel!
     @IBOutlet weak var notify: UIButton!

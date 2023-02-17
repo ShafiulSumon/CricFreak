@@ -26,7 +26,7 @@ class UpcomingContainerViewModel {
         }
     }
     
-    func setFixtureId(with fixtureID: Int) {
-        HomeViewModel.shared.observable.result = fixtureID
+    func setData(with data: RecentTableData) {
+        HomeViewModel.shared.observable.result = data
     }
 }
