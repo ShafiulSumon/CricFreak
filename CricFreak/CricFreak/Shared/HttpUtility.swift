@@ -12,7 +12,6 @@ final class HttpUtility {
     private init() {}
     
     func getDataFromAPI<T: Codable>(url: String, completion: @escaping (Result<T,Error>)->Void ) {
-        print(url)
         guard let url = URL(string: url) else { return }
         
         let session = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -23,6 +22,7 @@ final class HttpUtility {
                 guard let data = data else { return }
                 do {
                     let result = try JSONDecoder().decode(T.self, from: data)
+                    dump(result)
                     completion(.success(result))
                 }
                 catch {

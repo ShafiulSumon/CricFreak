@@ -26,6 +26,8 @@ final class Adapter {
             res.round = val.data?[i].round ?? "Unknown"
             res.matchDate = String(val.data?[i].startingAt?.prefix(10) ?? "YYYY-MM-dd")
             res.venue = val.data?[i].venue?.name ?? "Unknown Place"
+            res.capacity = val.data?[i].venue?.capacity ?? -1
+            res.venuCity = val.data?[i].venue?.city ?? "Unknown"
             res.localteamImg = val.data?[i].localteam?.imagePath ?? ""
             res.visitorteamImg = val.data?[i].visitorteam?.imagePath ?? ""
             res.localteamCode = val.data?[i].localteam?.code ?? "Team A"

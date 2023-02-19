@@ -19,28 +19,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdx-Ak-hhw" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="103.00000000000001" width="393" height="59.666666666666671"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="68"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CricFreak(logo-2)" translatesAutoresizingMaskIntoConstraints="NO" id="yCW-xs-l5n">
-                                        <rect key="frame" x="16" y="7.3333333333333286" width="157.33333333333334" height="45"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-d" translatesAutoresizingMaskIntoConstraints="NO" id="yCW-xs-l5n">
+                                        <rect key="frame" x="16" y="3.3333333333333321" width="157.33333333333334" height="61.333333333333343"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="customBlue"/>
                                 <constraints>
                                     <constraint firstItem="yCW-xs-l5n" firstAttribute="width" secondItem="Kdx-Ak-hhw" secondAttribute="width" multiplier="0.4" id="Akl-zh-fem"/>
-                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="leading" secondItem="Kdx-Ak-hhw" secondAttribute="leading" constant="16" id="PLn-E2-0wj"/>
+                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="leading" secondItem="Kdx-Ak-hhw" secondAttribute="leading" constant="16" id="L0S-1R-Hmt"/>
                                     <constraint firstItem="yCW-xs-l5n" firstAttribute="centerY" secondItem="Kdx-Ak-hhw" secondAttribute="centerY" id="l0L-gB-2lH"/>
-                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="height" secondItem="Kdx-Ak-hhw" secondAttribute="height" multiplier="0.75" id="rg4-4c-K3o"/>
+                                    <constraint firstItem="yCW-xs-l5n" firstAttribute="height" secondItem="Kdx-Ak-hhw" secondAttribute="height" multiplier="0.9" id="rg4-4c-K3o"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9e2-Ks-CUO">
-                                <rect key="frame" x="0.0" y="162.66666666666669" width="393" height="606.33333333333326"/>
+                                <rect key="frame" x="0.0" y="171" width="393" height="598"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGq-9o-rxg" userLabel="SegmentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="41.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="34.333333333333336"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2C8-a7-cfi">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="42.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="35.333333333333336"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <segments>
                                                     <segment title="Home"/>
@@ -63,31 +63,31 @@
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8R-I9-4Eq">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="564"/>
+                                        <rect key="frame" x="0.0" y="34" width="393" height="564"/>
                                         <connections>
                                             <segue destination="v64-Zy-hQV" kind="embed" id="DsS-ME-8V7"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyG-Dn-ysI">
-                                        <rect key="frame" x="0.0" y="-2" width="393" height="564"/>
+                                        <rect key="frame" x="0.0" y="34" width="393" height="564"/>
                                         <connections>
                                             <segue destination="gwz-bH-WwN" kind="embed" id="u6B-wR-NTm"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Vj-nm-4aZ">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="564"/>
+                                        <rect key="frame" x="0.0" y="26" width="393" height="564"/>
                                         <connections>
                                             <segue destination="mb5-OO-9Dg" kind="embed" id="yig-O6-qqo"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngU-iR-R4N">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="564"/>
+                                        <rect key="frame" x="0.0" y="26" width="393" height="564"/>
                                         <connections>
                                             <segue destination="LVA-9s-Feg" kind="embed" id="tKe-ga-vT2"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCY-6Y-5ub">
-                                        <rect key="frame" x="0.0" y="42" width="393" height="564"/>
+                                        <rect key="frame" x="0.0" y="26" width="393" height="564"/>
                                         <connections>
                                             <segue destination="aWS-0r-SC1" kind="embed" id="2x5-sn-aq4"/>
                                         </connections>
@@ -126,13 +126,13 @@
                         <constraints>
                             <constraint firstItem="Kdx-Ak-hhw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7OH-F7-GfM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Kdx-Ak-hhw" secondAttribute="trailing" id="BKJ-Gn-Vgk"/>
-                            <constraint firstItem="Kdx-Ak-hhw" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.07" id="VLO-Nu-01r"/>
+                            <constraint firstItem="Kdx-Ak-hhw" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.08" id="VLO-Nu-01r"/>
                             <constraint firstItem="Kdx-Ak-hhw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="axN-ii-hVc"/>
                             <constraint firstItem="9e2-Ks-CUO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bgd-qW-n4E"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9e2-Ks-CUO" secondAttribute="trailing" id="dG6-v5-4Kr"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="9e2-Ks-CUO" secondAttribute="bottom" id="jwE-oD-Wok"/>
                             <constraint firstItem="9e2-Ks-CUO" firstAttribute="top" secondItem="Kdx-Ak-hhw" secondAttribute="bottom" id="oBn-jy-MOW"/>
-                            <constraint firstItem="uGq-9o-rxg" firstAttribute="height" secondItem="Kdx-Ak-hhw" secondAttribute="height" multiplier="0.7" id="uZ5-1a-c0v"/>
+                            <constraint firstItem="uGq-9o-rxg" firstAttribute="height" secondItem="Kdx-Ak-hhw" secondAttribute="height" multiplier="0.5" id="uZ5-1a-c0v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gft-6x-22i"/>
@@ -579,12 +579,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CricFreak(logo-2)" width="66.666664123535156" height="21"/>
         <image name="argentina-flag" width="266.66665649414062" height="166.66667175292969"/>
         <image name="bell.fill" catalog="system" width="123" height="128"/>
         <image name="brazil-flag" width="213.33332824707031" height="149.33332824707031"/>
         <image name="dot.radiowaves.left.and.right" catalog="system" width="128" height="91"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="logo-d" width="66.666664123535156" height="29"/>
         <image name="no-internet" width="170.66667175292969" height="170.66667175292969"/>
         <image name="sad-face" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="customBlue">

@@ -18,6 +18,8 @@ struct RecentTableData {
     var round: String = "Unknown"
     var matchDate: String = "YYYY-MM-dd"
     var venue: String = "Unknown"
+    var capacity: Int = -1
+    var venuCity: String = "Unknown"
     var localteamImg: String = ""
     var visitorteamImg: String = ""
     var localteamCode: String = "Team A"

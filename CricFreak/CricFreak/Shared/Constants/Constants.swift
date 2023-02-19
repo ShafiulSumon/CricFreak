@@ -14,4 +14,5 @@ struct Constants {
     static let upcomingNib = "upcomingNib"
     static let collCell = "collCell"
     static let DetailsVC = "DetailsVC"
+    static let InfoCell = "InfoCell"
 }
