@@ -35,14 +35,7 @@ class DetailsVC: UIViewController {
     
 //MARK: - Default functions
     override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear")
         navigationController?.isNavigationBarHidden = false
-        //setTopViewValues2()
-//        HomeViewModel.shared.observable.binding() { [weak self] data in
-//            self?.fixtureId = data?.id
-//            self?.data = data
-//            self?.setTopViewValues2()
-//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,19 +43,22 @@ class DetailsVC: UIViewController {
     }
     
     override func viewDidLoad() {
-        print("viewDidLoad")
         super.viewDidLoad()
         
-        HomeViewModel.shared.observable.binding() { [weak self] data in
-            DispatchQueue.main.async {
-                self?.fixtureId = data?.id
-                self?.data = data
-                self?.setTopViewValues2()
-                DetailsViewModel.shared.observable.result = data
-            }
-        }
+//        DetailsViewModel.shared.receiveFixtureData()
+//
+//        DetailsViewModel.shared.observable.binding() { [weak self] data in
+//            DispatchQueue.main.async {
+//                self?.fixtureId = data?.id
+//                self?.data = data
+//                self?.
+//                //DetailsViewModel.shared.observable.result = data
+//            }
+//        }
         
+        DetailsViewModel.shared.observable.result = data
         
+        setTopViewValues2()
         designTopView()
         selectContainer(segmentIndex: 0)
     }

@@ -8,17 +8,10 @@
 import Foundation
 
 class InfoViewModel {
-    var observable = ObservableObject<InfoModel>()
-    var observableForFixture = ObservableObject<Int>()
+    static let shared = InfoViewModel()
+    private init() {}
     
-    func getFixtureId() {
-//        HomeViewModel.shared.observable.binding() { [weak self] data in
-//            self?.observableForFixture.result = data?.id
-//        }
-        DetailsViewModel.shared.observable.binding() { [weak self] data in
-            self?.observableForFixture.result = data?.id
-        }
-    }
+    var observable = ObservableObject<InfoModel>()
     
     func getInfo(fixtureId: Int) {
         let url = InfoURL.getURL(fixtureId: fixtureId)

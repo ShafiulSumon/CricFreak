@@ -10,7 +10,6 @@ import UIKit
 class InfoVC: UIViewController {
     var data: InfoData?
     var fixtureId: Int?
-    var infoViewModel = InfoViewModel()
     
     @IBOutlet weak var tableView: UITableView!
  
@@ -18,28 +17,11 @@ class InfoVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-       
-        //infoViewModel.getFixtureId()
         
-//        infoViewModel.observableForFixture.binding() { [weak self] data in
-//            self?.infoViewModel.getInfo(fixtureId: data ?? 0)
-//
-//            self?.infoViewModel.observable.binding() { res in
-//                DispatchQueue.main.async {
-//                    self?.data = res?.data
-//                    self?.tableView.reloadData()
-//                }
-//            }
-//        }
-        
-        DetailsViewModel.shared.observable.binding() { [weak self] data in
-            self?.infoViewModel.getInfo(fixtureId: data?.id ?? 0)
-            
-            self?.infoViewModel.observable.binding() { res in
-                DispatchQueue.main.async {
-                    self?.data = res?.data
-                    self?.tableView.reloadData()
-                }
+        InfoViewModel.shared.observable.binding() { [weak self] res in
+            DispatchQueue.main.async {
+                self?.data = res?.data
+                self?.tableView.reloadData()
             }
         }
     }

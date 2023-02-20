@@ -300,12 +300,42 @@
                     <view key="view" contentMode="scaleToFill" id="tzi-fW-tKr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMx-xt-v4k">
+                                <rect key="frame" x="16" y="16" width="361" height="100"/>
+                                <color key="backgroundColor" name="customBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6wk-0A-cP9"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Team A"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge6-l0-Xwr">
+                                <rect key="frame" x="16" y="132" width="361" height="100"/>
+                                <color key="backgroundColor" name="customBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="cKm-gX-yYd"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Team B"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ge6-l0-Xwr" firstAttribute="top" secondItem="OMx-xt-v4k" secondAttribute="bottom" constant="16" id="KRf-i2-jl6"/>
+                            <constraint firstItem="OMx-xt-v4k" firstAttribute="leading" secondItem="tzi-fW-tKr" secondAttribute="leading" constant="16" id="M5x-TW-nRE"/>
+                            <constraint firstAttribute="trailing" secondItem="OMx-xt-v4k" secondAttribute="trailing" constant="16" id="dIx-IW-xOl"/>
+                            <constraint firstItem="OMx-xt-v4k" firstAttribute="top" secondItem="tzi-fW-tKr" secondAttribute="top" constant="16" id="grE-zR-zuv"/>
+                            <constraint firstItem="ge6-l0-Xwr" firstAttribute="trailing" secondItem="OMx-xt-v4k" secondAttribute="trailing" id="umt-pU-cCc"/>
+                            <constraint firstItem="ge6-l0-Xwr" firstAttribute="leading" secondItem="OMx-xt-v4k" secondAttribute="leading" id="ybK-Ja-wKF"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnx-bp-eov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="263"/>
+            <point key="canvasLocation" x="1064.885496183206" y="261.97183098591552"/>
         </scene>
         <!--SquadVC-->
         <scene sceneID="s8o-jF-F4V">
@@ -319,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ox5-J2-1kM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="733"/>
+            <point key="canvasLocation" x="1040" y="792"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MdC-fZ-2a3">
@@ -385,9 +415,6 @@
         </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

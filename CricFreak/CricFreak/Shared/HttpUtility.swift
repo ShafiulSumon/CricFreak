@@ -22,7 +22,6 @@ final class HttpUtility {
                 guard let data = data else { return }
                 do {
                     let result = try JSONDecoder().decode(T.self, from: data)
-                    dump(result)
                     completion(.success(result))
                 }
                 catch {

@@ -61,6 +61,10 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Details", bundle: nil)
         if let detailsVC = storyboard.instantiateViewController(withIdentifier: Constants.DetailsVC) as? DetailsVC {
+            detailsVC.data = upcomingData.data[indexPath.row]
+            detailsVC.fixtureId = upcomingData.data[indexPath.row].id
+            InfoViewModel.shared.getInfo(fixtureId: upcomingData.data[indexPath.row].id)
+            ScoreboardViewModel.shared.getScore(fixtureId: upcomingData.data[indexPath.row].id)
             detailsVC.loadViewIfNeeded()
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }

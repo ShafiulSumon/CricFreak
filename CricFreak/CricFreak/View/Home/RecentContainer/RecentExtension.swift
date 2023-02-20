@@ -65,6 +65,10 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Details", bundle: nil)
         if let detailsVC = storyboard.instantiateViewController(withIdentifier: Constants.DetailsVC) as? DetailsVC {
+            detailsVC.data = recentData.data[indexPath.row]
+            detailsVC.fixtureId = recentData?.data[indexPath.row].id
+            InfoViewModel.shared.getInfo(fixtureId: recentData.data[indexPath.row].id)
+            ScoreboardViewModel.shared.getScore(fixtureId: recentData.data[indexPath.row].id)
             detailsVC.loadViewIfNeeded()
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }
