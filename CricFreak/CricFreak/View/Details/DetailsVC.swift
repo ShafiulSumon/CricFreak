@@ -31,16 +31,18 @@ class DetailsVC: UIViewController {
     
 //MARK: - Variables
     var fixtureId: Int!
+    var data: RecentTableData!
     
 //MARK: - Default functions
     override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear")
         navigationController?.isNavigationBarHidden = false
-        
-        DetailsViewModel.shared.receiveFixtureData()
-        DetailsViewModel.shared.observable.binding() { [weak self] data in
-            guard let data = data else { return }
-            self?.fixtureId = data.id
-        }
+        //setTopViewValues2()
+//        HomeViewModel.shared.observable.binding() { [weak self] data in
+//            self?.fixtureId = data?.id
+//            self?.data = data
+//            self?.setTopViewValues2()
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,7 +50,18 @@ class DetailsVC: UIViewController {
     }
     
     override func viewDidLoad() {
+        print("viewDidLoad")
         super.viewDidLoad()
+        
+        HomeViewModel.shared.observable.binding() { [weak self] data in
+            DispatchQueue.main.async {
+                self?.fixtureId = data?.id
+                self?.data = data
+                self?.setTopViewValues2()
+                DetailsViewModel.shared.observable.result = data
+            }
+        }
+        
         
         designTopView()
         selectContainer(segmentIndex: 0)
@@ -87,4 +100,21 @@ class DetailsVC: UIViewController {
         bgView.layer.cornerRadius = 20
     }
     
+    func setTopViewValues() {
+        labelOne.text = "England tour of India"
+        teamA.text = "India"
+        teamB.text = "England"
+        runA.text = "123-2(23.2)"
+        runB.text = "22(10)"
+        labelTwo.text = "England won by 323 runs(with 21 balls remaining)"
+    }
+    
+    func setTopViewValues2() {
+        labelOne.text = data?.stage ?? ""
+        teamA.text = data?.localteamName ?? ""
+        teamB.text = data?.visitorteamName
+        runA.text = (data?.localteamRun ?? "") + (data?.localteamWicket ?? "") + "(" + (data?.localteamOver ?? "") + ")"
+        runB.text = (data?.visitorteamRun ?? "") + (data?.visitorteamWicket ?? "") + "(" + (data?.visitorteamOver ?? "") + ")"
+        labelTwo.text = data?.note ?? ""
+    }
 }

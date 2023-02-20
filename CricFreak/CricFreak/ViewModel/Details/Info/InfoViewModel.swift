@@ -12,7 +12,10 @@ class InfoViewModel {
     var observableForFixture = ObservableObject<Int>()
     
     func getFixtureId() {
-        HomeViewModel.shared.observable.binding() { [weak self] data in
+//        HomeViewModel.shared.observable.binding() { [weak self] data in
+//            self?.observableForFixture.result = data?.id
+//        }
+        DetailsViewModel.shared.observable.binding() { [weak self] data in
             self?.observableForFixture.result = data?.id
         }
     }

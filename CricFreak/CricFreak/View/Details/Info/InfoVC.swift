@@ -11,18 +11,29 @@ class InfoVC: UIViewController {
     var data: InfoData?
     var fixtureId: Int?
     var infoViewModel = InfoViewModel()
-
-    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tableView: UITableView!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+       
+        //infoViewModel.getFixtureId()
         
-        infoViewModel.getFixtureId()
+//        infoViewModel.observableForFixture.binding() { [weak self] data in
+//            self?.infoViewModel.getInfo(fixtureId: data ?? 0)
+//
+//            self?.infoViewModel.observable.binding() { res in
+//                DispatchQueue.main.async {
+//                    self?.data = res?.data
+//                    self?.tableView.reloadData()
+//                }
+//            }
+//        }
         
-        infoViewModel.observableForFixture.binding() { [weak self] data in
-            self?.infoViewModel.getInfo(fixtureId: data ?? 0)
+        DetailsViewModel.shared.observable.binding() { [weak self] data in
+            self?.infoViewModel.getInfo(fixtureId: data?.id ?? 0)
             
             self?.infoViewModel.observable.binding() { res in
                 DispatchQueue.main.async {
@@ -52,7 +63,7 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource {
         if(indexPath.section == 0) {
             if(indexPath.row == 0) {
                 cell.labelOne.text = "Match"
-                cell.labelTwo.text = data?.round ?? "Friendly"
+                cell.labelTwo.text = data?.round ?? "N/A"
             }
             else if(indexPath.row == 1) {
                 cell.labelOne.text = "Series"

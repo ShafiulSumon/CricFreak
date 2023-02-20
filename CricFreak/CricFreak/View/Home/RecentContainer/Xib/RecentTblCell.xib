@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sPp-Xh-zBO">
-                        <rect key="frame" x="8" y="8" width="589" height="192.66666666666666"/>
+                        <rect key="frame" x="8" y="8" width="589" height="197.66666666666666"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="AuW-ym-rWi">
                                 <rect key="frame" x="0.0" y="0.0" width="589" height="20.666666666666668"/>
@@ -35,16 +35,16 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w87-oN-wXp">
-                                <rect key="frame" x="0.0" y="28.666666666666664" width="589" height="20"/>
+                                <rect key="frame" x="0.0" y="28.666666666666664" width="589" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="iBG-sm-E5s"/>
+                                    <constraint firstAttribute="height" constant="25" id="iBG-sm-E5s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="yId-N0-gp5">
-                                <rect key="frame" x="0.0" y="56.666666666666671" width="589" height="40"/>
+                                <rect key="frame" x="0.0" y="61.666666666666671" width="589" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xm1-IM-ca0">
                                         <rect key="frame" x="25" y="0.0" width="40" height="40"/>
@@ -78,7 +78,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="sdT-yh-LG5">
-                                <rect key="frame" x="0.0" y="104.66666666666667" width="589" height="40.000000000000014"/>
+                                <rect key="frame" x="0.0" y="109.66666666666669" width="589" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wq6-Cs-dzz">
                                         <rect key="frame" x="25" y="0.0" width="40" height="40"/>
@@ -112,7 +112,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGM-GY-D8w">
-                                <rect key="frame" x="0.0" y="152.66666666666666" width="589" height="40"/>
+                                <rect key="frame" x="0.0" y="157.66666666666666" width="589" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cdR-Cp-dyU"/>
                                 </constraints>
