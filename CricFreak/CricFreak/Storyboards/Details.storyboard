@@ -231,7 +231,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hIa-sa-tn8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hIa-sa-tn8">
                                 <rect key="frame" x="16" y="59" width="361" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -301,37 +301,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMx-xt-v4k">
-                                <rect key="frame" x="16" y="16" width="361" height="100"/>
-                                <color key="backgroundColor" name="customBlue"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cEP-tl-w2Y">
+                                <rect key="frame" x="96.666666666666686" y="16" width="200" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="6wk-0A-cP9"/>
+                                    <constraint firstAttribute="height" constant="25" id="Xop-b7-6qf"/>
+                                    <constraint firstAttribute="width" constant="200" id="xBb-4i-hIY"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Team A"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge6-l0-Xwr">
-                                <rect key="frame" x="16" y="132" width="361" height="100"/>
-                                <color key="backgroundColor" name="customBlue"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="cKm-gX-yYd"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Team B"/>
-                            </button>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeTeam:" destination="se4-29-y3g" eventType="valueChanged" id="MFu-P3-elO"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9hP-FT-feJ">
+                                <rect key="frame" x="16" y="49" width="361" height="471"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ge6-l0-Xwr" firstAttribute="top" secondItem="OMx-xt-v4k" secondAttribute="bottom" constant="16" id="KRf-i2-jl6"/>
-                            <constraint firstItem="OMx-xt-v4k" firstAttribute="leading" secondItem="tzi-fW-tKr" secondAttribute="leading" constant="16" id="M5x-TW-nRE"/>
-                            <constraint firstAttribute="trailing" secondItem="OMx-xt-v4k" secondAttribute="trailing" constant="16" id="dIx-IW-xOl"/>
-                            <constraint firstItem="OMx-xt-v4k" firstAttribute="top" secondItem="tzi-fW-tKr" secondAttribute="top" constant="16" id="grE-zR-zuv"/>
-                            <constraint firstItem="ge6-l0-Xwr" firstAttribute="trailing" secondItem="OMx-xt-v4k" secondAttribute="trailing" id="umt-pU-cCc"/>
-                            <constraint firstItem="ge6-l0-Xwr" firstAttribute="leading" secondItem="OMx-xt-v4k" secondAttribute="leading" id="ybK-Ja-wKF"/>
+                            <constraint firstItem="9hP-FT-feJ" firstAttribute="leading" secondItem="tzi-fW-tKr" secondAttribute="leadingMargin" id="8Xx-ZE-H9u"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="9hP-FT-feJ" secondAttribute="bottom" id="NAg-pB-ciV"/>
+                            <constraint firstItem="9hP-FT-feJ" firstAttribute="top" secondItem="cEP-tl-w2Y" secondAttribute="bottom" constant="8" id="Rwm-mr-bk6"/>
+                            <constraint firstItem="cEP-tl-w2Y" firstAttribute="top" secondItem="tzi-fW-tKr" secondAttribute="top" constant="16" id="Yq1-Dg-0nT"/>
+                            <constraint firstItem="cEP-tl-w2Y" firstAttribute="centerX" secondItem="tzi-fW-tKr" secondAttribute="centerX" id="dft-M6-7NR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9hP-FT-feJ" secondAttribute="trailing" id="sR5-1A-koZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="segmentControl" destination="cEP-tl-w2Y" id="wuV-iK-Avl"/>
+                        <outlet property="tableView" destination="9hP-FT-feJ" id="peT-4S-Zwd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnx-bp-eov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

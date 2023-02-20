@@ -54,6 +54,10 @@
 		845831AA29A3149F003F06EB /* ScoreboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831A929A3149F003F06EB /* ScoreboardViewModel.swift */; };
 		845831AC29A3212E003F06EB /* ScoreboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831AB29A3212E003F06EB /* ScoreboardModel.swift */; };
 		845831AE29A32255003F06EB /* ScoreboardURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831AD29A32255003F06EB /* ScoreboardURL.swift */; };
+		845831B229A3868E003F06EB /* ScoreboardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831B029A3868E003F06EB /* ScoreboardTVC.swift */; };
+		845831B329A3868E003F06EB /* ScoreboardTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845831B129A3868E003F06EB /* ScoreboardTVC.xib */; };
+		845831B529A3884C003F06EB /* ScoreboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831B429A3884C003F06EB /* ScoreboardExtension.swift */; };
+		845831B729A3AC56003F06EB /* EasyScoreboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831B629A3AC56003F06EB /* EasyScoreboardModel.swift */; };
 		84FDA70F299A6016008543D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA70E299A6016008543D2 /* AppDelegate.swift */; };
 		84FDA711299A6016008543D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA710299A6016008543D2 /* SceneDelegate.swift */; };
 		84FDA716299A6016008543D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FDA714299A6016008543D2 /* Main.storyboard */; };
@@ -112,6 +116,10 @@
 		845831A929A3149F003F06EB /* ScoreboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewModel.swift; sourceTree = "<group>"; };
 		845831AB29A3212E003F06EB /* ScoreboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardModel.swift; sourceTree = "<group>"; };
 		845831AD29A32255003F06EB /* ScoreboardURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardURL.swift; sourceTree = "<group>"; };
+		845831B029A3868E003F06EB /* ScoreboardTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTVC.swift; sourceTree = "<group>"; };
+		845831B129A3868E003F06EB /* ScoreboardTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreboardTVC.xib; sourceTree = "<group>"; };
+		845831B429A3884C003F06EB /* ScoreboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardExtension.swift; sourceTree = "<group>"; };
+		845831B629A3AC56003F06EB /* EasyScoreboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyScoreboardModel.swift; sourceTree = "<group>"; };
 		84FDA70B299A6016008543D2 /* CricFreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricFreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FDA70E299A6016008543D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FDA710299A6016008543D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +282,7 @@
 				84583172299CD3D8003F06EB /* CountryModel.swift */,
 				845831A729A20936003F06EB /* InfoModel.swift */,
 				845831AB29A3212E003F06EB /* ScoreboardModel.swift */,
+				845831B629A3AC56003F06EB /* EasyScoreboardModel.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -341,7 +350,9 @@
 		8458319629A1E6D7003F06EB /* Scoreboard */ = {
 			isa = PBXGroup;
 			children = (
+				845831AF29A38661003F06EB /* Xib */,
 				8458319A29A1E717003F06EB /* ScoreboardVC.swift */,
+				845831B429A3884C003F06EB /* ScoreboardExtension.swift */,
 			);
 			path = Scoreboard;
 			sourceTree = "<group>";
@@ -375,6 +386,15 @@
 			children = (
 			);
 			path = Squad;
+			sourceTree = "<group>";
+		};
+		845831AF29A38661003F06EB /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				845831B029A3868E003F06EB /* ScoreboardTVC.swift */,
+				845831B129A3868E003F06EB /* ScoreboardTVC.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 		84FDA702299A6016008543D2 = {
@@ -524,6 +544,7 @@
 				84FDA71E299A6016008543D2 /* LaunchScreen.storyboard in Resources */,
 				84FDA71B299A6016008543D2 /* Assets.xcassets in Resources */,
 				84583139299B2729003F06EB /* More.storyboard in Resources */,
+				845831B329A3868E003F06EB /* ScoreboardTVC.xib in Resources */,
 				84583135299B2710003F06EB /* Matches.storyboard in Resources */,
 				84583137299B271F003F06EB /* Statistics.storyboard in Resources */,
 				84583189299F19E7003F06EB /* Details.storyboard in Resources */,
@@ -604,9 +625,12 @@
 				8458316F299CCDBD003F06EB /* EasyRecentModel.swift in Sources */,
 				84583153299C830F003F06EB /* HomeContainerVC.swift in Sources */,
 				8458319B29A1E717003F06EB /* ScoreboardVC.swift in Sources */,
+				845831B529A3884C003F06EB /* ScoreboardExtension.swift in Sources */,
 				845831A429A1F790003F06EB /* InfoViewModel.swift in Sources */,
+				845831B729A3AC56003F06EB /* EasyScoreboardModel.swift in Sources */,
 				84FDA719299A6016008543D2 /* CricFreak.xcdatamodeld in Sources */,
 				84583169299CB5AC003F06EB /* RecentMatchURL.swift in Sources */,
+				845831B229A3868E003F06EB /* ScoreboardTVC.swift in Sources */,
 				8458319D29A1E727003F06EB /* SquadVC.swift in Sources */,
 				84583185299E1D6B003F06EB /* TopCollCell.swift in Sources */,
 				8458318D299F1B97003F06EB /* DetailsVC.swift in Sources */,

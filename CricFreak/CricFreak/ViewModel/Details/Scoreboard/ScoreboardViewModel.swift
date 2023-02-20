@@ -12,6 +12,8 @@ class ScoreboardViewModel {
     private init() {} 
     
     var observable = ObservableObject<ScoreboardModel>()
+    var team: [Int:String] = [:]
+    var teamName: [String] = []
     
     func getScore(fixtureId: Int) {
         let url = ScoreboardURL.getURL(fixtureId: fixtureId)
