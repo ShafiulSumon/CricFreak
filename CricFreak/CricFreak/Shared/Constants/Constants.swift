@@ -17,4 +17,6 @@ struct Constants {
     static let InfoCell = "InfoCell"
     static let ScoreTblCell = "ScoreTblCell"
     static let ScoreboardTVC = "ScoreboardTVC"
+    static let SquadTVC = "SquadTVC"
+    static let squadCell = "squadCell"
 }

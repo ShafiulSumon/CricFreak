@@ -346,8 +346,22 @@
                     <view key="view" contentMode="scaleToFill" id="2cl-nc-4hb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wUz-l1-Msj">
+                                <rect key="frame" x="16" y="59" width="361" height="461"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wUz-l1-Msj" firstAttribute="leading" secondItem="2cl-nc-4hb" secondAttribute="leadingMargin" id="4p7-a1-CzY"/>
+                            <constraint firstItem="wUz-l1-Msj" firstAttribute="top" secondItem="2cl-nc-4hb" secondAttribute="topMargin" id="9J3-TJ-7FF"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="wUz-l1-Msj" secondAttribute="bottom" id="XVW-Kj-Yan"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wUz-l1-Msj" secondAttribute="trailing" id="gUk-g5-FUc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="wUz-l1-Msj" id="AYx-wj-sRE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ox5-J2-1kM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -408,9 +422,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

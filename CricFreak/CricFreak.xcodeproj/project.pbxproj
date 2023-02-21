@@ -58,6 +58,13 @@
 		845831B329A3868E003F06EB /* ScoreboardTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845831B129A3868E003F06EB /* ScoreboardTVC.xib */; };
 		845831B529A3884C003F06EB /* ScoreboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831B429A3884C003F06EB /* ScoreboardExtension.swift */; };
 		845831B729A3AC56003F06EB /* EasyScoreboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831B629A3AC56003F06EB /* EasyScoreboardModel.swift */; };
+		845831B929A48AB6003F06EB /* SquadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831B829A48AB6003F06EB /* SquadModel.swift */; };
+		845831BB29A48D0B003F06EB /* SquadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831BA29A48D0B003F06EB /* SquadViewModel.swift */; };
+		845831BD29A48D9E003F06EB /* SquadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831BC29A48D9E003F06EB /* SquadURL.swift */; };
+		845831C129A49018003F06EB /* SquadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831BF29A49018003F06EB /* SquadTVC.swift */; };
+		845831C229A49018003F06EB /* SquadTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845831C029A49018003F06EB /* SquadTVC.xib */; };
+		845831C429A4A025003F06EB /* SquadExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831C329A4A025003F06EB /* SquadExtension.swift */; };
+		845831C629A4AF76003F06EB /* EasySquadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831C529A4AF76003F06EB /* EasySquadModel.swift */; };
 		84FDA70F299A6016008543D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA70E299A6016008543D2 /* AppDelegate.swift */; };
 		84FDA711299A6016008543D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA710299A6016008543D2 /* SceneDelegate.swift */; };
 		84FDA716299A6016008543D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FDA714299A6016008543D2 /* Main.storyboard */; };
@@ -120,6 +127,13 @@
 		845831B129A3868E003F06EB /* ScoreboardTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreboardTVC.xib; sourceTree = "<group>"; };
 		845831B429A3884C003F06EB /* ScoreboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardExtension.swift; sourceTree = "<group>"; };
 		845831B629A3AC56003F06EB /* EasyScoreboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyScoreboardModel.swift; sourceTree = "<group>"; };
+		845831B829A48AB6003F06EB /* SquadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadModel.swift; sourceTree = "<group>"; };
+		845831BA29A48D0B003F06EB /* SquadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadViewModel.swift; sourceTree = "<group>"; };
+		845831BC29A48D9E003F06EB /* SquadURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadURL.swift; sourceTree = "<group>"; };
+		845831BF29A49018003F06EB /* SquadTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadTVC.swift; sourceTree = "<group>"; };
+		845831C029A49018003F06EB /* SquadTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquadTVC.xib; sourceTree = "<group>"; };
+		845831C329A4A025003F06EB /* SquadExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadExtension.swift; sourceTree = "<group>"; };
+		845831C529A4AF76003F06EB /* EasySquadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySquadModel.swift; sourceTree = "<group>"; };
 		84FDA70B299A6016008543D2 /* CricFreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricFreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FDA70E299A6016008543D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FDA710299A6016008543D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -283,6 +297,8 @@
 				845831A729A20936003F06EB /* InfoModel.swift */,
 				845831AB29A3212E003F06EB /* ScoreboardModel.swift */,
 				845831B629A3AC56003F06EB /* EasyScoreboardModel.swift */,
+				845831B829A48AB6003F06EB /* SquadModel.swift */,
+				845831C529A4AF76003F06EB /* EasySquadModel.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -295,6 +311,7 @@
 				84583179299CEA6E003F06EB /* UpcomingMatchURL.swift */,
 				845831A529A2089A003F06EB /* InfoURL.swift */,
 				845831AD29A32255003F06EB /* ScoreboardURL.swift */,
+				845831BC29A48D9E003F06EB /* SquadURL.swift */,
 			);
 			path = UrlMaker;
 			sourceTree = "<group>";
@@ -360,7 +377,9 @@
 		8458319729A1E6E2003F06EB /* Squad */ = {
 			isa = PBXGroup;
 			children = (
+				845831BE29A48FF7003F06EB /* Xib */,
 				8458319C29A1E727003F06EB /* SquadVC.swift */,
+				845831C329A4A025003F06EB /* SquadExtension.swift */,
 			);
 			path = Squad;
 			sourceTree = "<group>";
@@ -384,6 +403,7 @@
 		845831A229A1F76B003F06EB /* Squad */ = {
 			isa = PBXGroup;
 			children = (
+				845831BA29A48D0B003F06EB /* SquadViewModel.swift */,
 			);
 			path = Squad;
 			sourceTree = "<group>";
@@ -393,6 +413,15 @@
 			children = (
 				845831B029A3868E003F06EB /* ScoreboardTVC.swift */,
 				845831B129A3868E003F06EB /* ScoreboardTVC.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		845831BE29A48FF7003F06EB /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				845831BF29A49018003F06EB /* SquadTVC.swift */,
+				845831C029A49018003F06EB /* SquadTVC.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -549,6 +578,7 @@
 				84583137299B271F003F06EB /* Statistics.storyboard in Resources */,
 				84583189299F19E7003F06EB /* Details.storyboard in Resources */,
 				84583178299CD710003F06EB /* UpcomingTblCell.xib in Resources */,
+				845831C229A49018003F06EB /* SquadTVC.xib in Resources */,
 				8458315C299C8A62003F06EB /* RecentTblCell.xib in Resources */,
 				84FDA716299A6016008543D2 /* Main.storyboard in Resources */,
 				84583133299B26FE003F06EB /* Home.storyboard in Resources */,
@@ -605,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84583166299CB4C9003F06EB /* HttpUtility.swift in Sources */,
+				845831BB29A48D0B003F06EB /* SquadViewModel.swift in Sources */,
 				8458317F299CFA71003F06EB /* UpcomingExtension.swift in Sources */,
 				8458314D299C82B6003F06EB /* RecentContainerVC.swift in Sources */,
 				84583191299F326A003F06EB /* DetailsViewModel.swift in Sources */,
@@ -616,6 +647,7 @@
 				84583177299CD710003F06EB /* UpcomingTblCell.swift in Sources */,
 				8458313F299B8A4D003F06EB /* MatchesVC.swift in Sources */,
 				845831AE29A32255003F06EB /* ScoreboardURL.swift in Sources */,
+				845831C629A4AF76003F06EB /* EasySquadModel.swift in Sources */,
 				8458314F299C82E1003F06EB /* UpcomingContainerVC.swift in Sources */,
 				8458317D299CEB14003F06EB /* UpcomingContainerViewModel.swift in Sources */,
 				84583171299CD2A1003F06EB /* CountryFlagURL.swift in Sources */,
@@ -625,9 +657,12 @@
 				8458316F299CCDBD003F06EB /* EasyRecentModel.swift in Sources */,
 				84583153299C830F003F06EB /* HomeContainerVC.swift in Sources */,
 				8458319B29A1E717003F06EB /* ScoreboardVC.swift in Sources */,
+				845831C129A49018003F06EB /* SquadTVC.swift in Sources */,
 				845831B529A3884C003F06EB /* ScoreboardExtension.swift in Sources */,
+				845831C429A4A025003F06EB /* SquadExtension.swift in Sources */,
 				845831A429A1F790003F06EB /* InfoViewModel.swift in Sources */,
 				845831B729A3AC56003F06EB /* EasyScoreboardModel.swift in Sources */,
+				845831B929A48AB6003F06EB /* SquadModel.swift in Sources */,
 				84FDA719299A6016008543D2 /* CricFreak.xcdatamodeld in Sources */,
 				84583169299CB5AC003F06EB /* RecentMatchURL.swift in Sources */,
 				845831B229A3868E003F06EB /* ScoreboardTVC.swift in Sources */,
@@ -644,6 +679,7 @@
 				8458313C299B8008003F06EB /* HomeVC.swift in Sources */,
 				8458319F29A1EB44003F06EB /* InfoTVC.swift in Sources */,
 				8458317A299CEA6E003F06EB /* UpcomingMatchURL.swift in Sources */,
+				845831BD29A48D9E003F06EB /* SquadURL.swift in Sources */,
 				8458315B299C8A62003F06EB /* RecentTblCell.swift in Sources */,
 				84FDA70F299A6016008543D2 /* AppDelegate.swift in Sources */,
 				84FDA711299A6016008543D2 /* SceneDelegate.swift in Sources */,

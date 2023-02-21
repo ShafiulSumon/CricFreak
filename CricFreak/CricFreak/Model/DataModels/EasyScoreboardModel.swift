@@ -8,7 +8,7 @@
 import Foundation
 
 struct EasyScoreboardModel {
-    //var flag: Int
+    var flag: Int = 0
     var teamID: Int = -1
     var name: String = ""
     var runORover: Int = -1

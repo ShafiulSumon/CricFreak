@@ -77,6 +77,7 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
             ScoreboardViewModel.shared.team[upcomingData.data[indexPath.row].visitorteamId] = upcomingData.data[indexPath.row].visitorteamName
             ScoreboardViewModel.shared.teamName.append(upcomingData.data[indexPath.row].localteamName)
             ScoreboardViewModel.shared.teamName.append(upcomingData.data[indexPath.row].visitorteamName)
+            SquadViewModel.shared.getSquad(fixtureId: upcomingData.data[indexPath.row].id, data: upcomingData.data[indexPath.row])
             detailsVC.loadViewIfNeeded()
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }

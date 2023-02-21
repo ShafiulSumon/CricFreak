@@ -23,13 +23,7 @@ extension ScoreboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ScoreTblCell, for: indexPath) as! ScoreboardTVC
         
-//        cell.label_a.text = "John Doe"
-//        cell.label_b.text = "102"
-//        cell.label_c.text = "197"
-//        cell.label_d.text = "0"
-//        cell.label_e.text = "0"
-//        cell.label_f.text = "200.0"
-        
+        cell.backgroundColor = .white
         if(indexPath.section == 0) {
             cell.label_a.text = tableDataBat[indexPath.row].name
             cell.label_b.text = String(tableDataBat[indexPath.row].runORover)
@@ -37,6 +31,9 @@ extension ScoreboardVC: UITableViewDelegate, UITableViewDataSource {
             cell.label_d.text = String(tableDataBat[indexPath.row].fourORrun)
             cell.label_e.text = String(tableDataBat[indexPath.row].sixORwicket)
             cell.label_f.text = String(tableDataBat[indexPath.row].srORer)
+            if(tableDataBat[indexPath.row].flag == 1) {
+                cell.backgroundColor = UIColor(red: 229/255, green: 255/255, blue: 231/255, alpha: 0.8)
+            }
         }
         else {
             cell.label_a.text = tableDataBowl[indexPath.row].name
@@ -69,7 +66,7 @@ extension ScoreboardVC: UITableViewDelegate, UITableViewDataSource {
             cell.label_f.text = "ER"
         }
         
-        cell.backgroundColor = .systemGray6
+        cell.backgroundColor = .lightGray
         cell.layer.cornerRadius = 5
         
         return cell

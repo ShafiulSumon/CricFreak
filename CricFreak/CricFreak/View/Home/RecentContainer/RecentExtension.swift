@@ -73,6 +73,8 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
             ScoreboardViewModel.shared.team[recentData.data[indexPath.row].visitorteamId] = recentData.data[indexPath.row].visitorteamName
             ScoreboardViewModel.shared.teamName.append(recentData.data[indexPath.row].localteamName)
             ScoreboardViewModel.shared.teamName.append(recentData.data[indexPath.row].visitorteamName)
+            
+            SquadViewModel.shared.getSquad(fixtureId: recentData.data[indexPath.row].id, data: recentData.data[indexPath.row])
             detailsVC.loadViewIfNeeded()
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }

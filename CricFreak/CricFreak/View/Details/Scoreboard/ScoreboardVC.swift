@@ -58,7 +58,10 @@ class ScoreboardVC: UIViewController {
         for val in (data?.batting ?? []) {
             
             var x = EasyScoreboardModel()
-            //x.flag = 0
+            x.flag = 0
+            if(val.bowler == nil && val.catchstump == nil && val.batsmanout == nil && val.runoutby == nil) {
+                x.flag = 1
+            }
             x.teamID = val.teamID ?? 0
             x.name = val.batsman?.fullname ?? "Unknown"
             x.runORover = val.score ?? -1
@@ -78,7 +81,7 @@ class ScoreboardVC: UIViewController {
         for val in (data?.bowling ?? []) {
             
             var x = EasyScoreboardModel()
-            //x.flag = 1
+            x.flag = 0
             x.teamID = -1
             x.name = val.bowler?.fullname ?? "Unknown"
             x.runORover = Int(val.overs ?? -1)
@@ -119,5 +122,4 @@ class ScoreboardVC: UIViewController {
         }
         tableView.reloadData()
     }
-    
 }
