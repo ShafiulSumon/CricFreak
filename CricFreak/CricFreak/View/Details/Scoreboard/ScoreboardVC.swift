@@ -98,7 +98,7 @@ class ScoreboardVC: UIViewController {
     
     func renderTableData(id: Int) {
         if id == 0 {
-            if(data?.localteam?.id == teamOneBat[0].teamID) {
+            if(teamOneBat.count != 0 && (data?.localteam?.id == teamOneBat[0].teamID)) {
                 tableDataBat = teamOneBat
                 tableDataBowl = teamOneBowl
             }
@@ -108,7 +108,7 @@ class ScoreboardVC: UIViewController {
             }
         }
         else {
-            if(data?.visitorteam?.id == teamOneBat[0].teamID) {
+            if(teamOneBat.count != 0 && (data?.visitorteam?.id == teamOneBat[0].teamID)) {
                 tableDataBat = teamOneBat
                 tableDataBowl = teamOneBowl
             }
