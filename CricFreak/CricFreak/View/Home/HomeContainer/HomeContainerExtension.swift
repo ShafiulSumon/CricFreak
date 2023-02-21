@@ -30,7 +30,7 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
         cell.runB.text = "120-2(23.3)"
         cell.runA.isHidden = true
         cell.runB.isHidden = true
-        cell.time.text = "10:10 AM"
+        cell.time.text = upcomingData.data[indexPath.row].matchTime
         cell.date.text = upcomingData.data[indexPath.row].matchDate
         cell.LabelRes.text = upcomingData.data[indexPath.row].venue
         

@@ -66,12 +66,15 @@ extension ScoreboardVC: UITableViewDelegate, UITableViewDataSource {
             cell.label_f.text = "ER"
         }
         
-        cell.backgroundColor = .lightGray
+        cell.backgroundColor = UIColor(red: 43/255, green: 58/255, blue: 89/255, alpha: 0.5)
         cell.layer.cornerRadius = 5
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

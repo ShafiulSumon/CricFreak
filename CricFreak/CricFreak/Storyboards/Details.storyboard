@@ -140,7 +140,7 @@
                                     <segment title="Scoreboard"/>
                                     <segment title="Squad"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.086000002920627594" green="0.23100000619888306" blue="0.40000000596046448" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="selectedSegmentTintColor" red="0.16862745098039217" green="0.22745098039215686" blue="0.34901960784313724" alpha="0.84651800496688745" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="segmentControl:" destination="Y6W-OH-hqX" eventType="valueChanged" id="k9f-DJ-DAa"/>
                                 </connections>
@@ -415,7 +415,7 @@
         <image name="stadium_2" width="208.66667175292969" height="104.33333587646484"/>
         <image name="versus (3)" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="customBlue">
-            <color red="0.086000002920627594" green="0.23100000619888306" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.16862745098039217" green="0.22745098039215686" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

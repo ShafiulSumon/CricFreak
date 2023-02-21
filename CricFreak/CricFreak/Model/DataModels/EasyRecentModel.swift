@@ -14,9 +14,11 @@ struct EasyRecentModel {
 struct RecentTableData {
     var id: Int = -1
     var leagueID: Int = -1
+    var status: String = ""
     var stage: String = "Unknown"
     var round: String = "Unknown"
     var matchDate: String = "YYYY-MM-dd"
+    var matchTime: String = "20:13"
     var venue: String = "Unknown"
     var capacity: Int = -1
     var venuCity: String = "Unknown"

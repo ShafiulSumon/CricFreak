@@ -22,9 +22,11 @@ final class Adapter {
             res.localteamId = (val.data?[i].localteam?.id) ?? -1
             res.visitorteamId = (val.data?[i].visitorteam?.id) ?? -1
             res.leagueID = (val.data?[i].leagueID) ?? -1
+            res.status = (val.data?[i].status) ?? ""
             res.stage = val.data?[i].stage?.name ?? "Unknown"
             res.round = val.data?[i].round ?? "Unknown"
             res.matchDate = String(val.data?[i].startingAt?.prefix(10) ?? "YYYY-MM-dd")
+            res.matchTime = DateManager.shared.makeTime(date: val.data?[i].startingAt ?? "")
             res.venue = val.data?[i].venue?.name ?? "Unknown Place"
             res.capacity = val.data?[i].venue?.capacity ?? -1
             res.venuCity = val.data?[i].venue?.city ?? "Unknown"

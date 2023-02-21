@@ -60,6 +60,8 @@ class DetailsVC: UIViewController {
         
         setTopViewValues2()
         designTopView()
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         selectContainer(segmentIndex: 0)
     }
     

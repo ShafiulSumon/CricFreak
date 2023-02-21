@@ -20,7 +20,7 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
         cell.TeamBimg.layer.cornerRadius = 20
         
         cell.LabelOne.text = upcomingData.data[indexPath.row].stage
-        cell.LabelTwo.text = upcomingData.data[indexPath.row].matchDate
+        cell.LabelTwo.text = DateManager.shared.daysBetween(currDate: upcomingData.data[indexPath.row].matchDate) + " days to go"
         cell.TeamA.text = upcomingData.data[indexPath.row].localteamCode
         cell.TeamB.text = upcomingData.data[indexPath.row].visitorteamCode
         
