@@ -41,8 +41,8 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
             cell.teamBimg.sd_setImage(with: URL(string: recentData.data[indexPath.row].visitorteamImg))
         }
         
-        cell.teamA.text = recentData.data[indexPath.row].localteamCode
-        cell.teamB.text = recentData.data[indexPath.row].visitorteamCode
+        cell.teamA.text = recentData.data[indexPath.row].localteamName
+        cell.teamB.text = recentData.data[indexPath.row].visitorteamName
         cell.runA.text = recentData.data[indexPath.row].localteamRun + recentData.data[indexPath.row].localteamWicket + "(" + recentData.data[indexPath.row].localteamOver + ")"
         cell.runB.text = recentData.data[indexPath.row].visitorteamRun + recentData.data[indexPath.row].visitorteamWicket + "(" + recentData.data[indexPath.row].visitorteamOver + ")"
         cell.labelResult.text = recentData.data[indexPath.row].note

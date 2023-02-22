@@ -16,11 +16,12 @@ extension SquadVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.squadCell, for: indexPath) as! SquadTVC
         
+        
         cell.imgA.layer.cornerRadius = 20
         cell.imgB.layer.cornerRadius = 20
         
-        cell.labelA.text = teamA[indexPath.row].name
-        cell.labelB.text = teamB[indexPath.row].name
+        cell.labelA.text = teamA[indexPath.row].name + (teamA[indexPath.row].cORw)
+        cell.labelB.text = teamB[indexPath.row].name + teamB[indexPath.row].cORw
         
         cell.imgA.sd_setImage(with: URL(string: teamA[indexPath.row].img))
         cell.imgB.sd_setImage(with: URL(string: teamB[indexPath.row].img))

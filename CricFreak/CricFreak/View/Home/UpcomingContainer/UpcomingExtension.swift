@@ -16,8 +16,9 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.upcomingNib, for: indexPath) as! UpcomingTblCell
         
         cell.stackView.layer.cornerRadius = 10
-        cell.TeamAimg.layer.cornerRadius = 20
-        cell.TeamBimg.layer.cornerRadius = 20
+        let rad = cell.TeamAimg.bounds.width/2
+        cell.TeamAimg.layer.cornerRadius = 10
+        cell.TeamBimg.layer.cornerRadius = 10
         
         cell.LabelOne.text = upcomingData.data[indexPath.row].stage
         cell.LabelTwo.text = DateManager.shared.daysBetween(currDate: upcomingData.data[indexPath.row].matchDate) + " days to go"

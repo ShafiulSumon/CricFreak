@@ -45,6 +45,12 @@ class SquadVC: UIViewController {
             var x = EasySquadModel()
             x.name = val.fullname ?? "Unknown"
             x.img = val.imagePath ?? "https://cdn.sportmonks.com/images/cricket/placeholder.png"
+            if(val.lineup?.wicketkeeper ?? false) {
+                x.cORw = "(wc)"
+            }
+            else if(val.lineup?.captain ?? false) {
+                x.cORw = "(c)"
+            }
             if(val.lineup?.teamID == teamData?.localteamId) {
                 teamA.append(x)
             }

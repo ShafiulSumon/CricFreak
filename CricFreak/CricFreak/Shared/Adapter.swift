@@ -38,7 +38,7 @@ final class Adapter {
             res.visitorteamName = val.data?[i].visitorteam?.name ?? ""
             
             if(val.data?[i].runs?.isEmpty == false) {
-                if(val.data?[i].runs?[0].id == val.data?[i].localteam?.id) {
+                if(val.data?[i].runs?[0].teamID == val.data?[i].localteam?.id) {
                     res.localteamRun = String(val.data?[i].runs?[0].score ?? 0)
                     res.localteamWicket = String(val.data?[i].runs?[0].wickets ?? 0)
                     if(res.localteamWicket == "10") {
