@@ -20,5 +20,7 @@ struct Constants {
     static let SquadTVC         = "SquadTVC"
     static let squadCell        = "squadCell"
     static let leagueCell       = "leagueCell"
+    static let searchCell       = "searchCell"
+    
     static let apiKey           = "yUQG6zjv4Bi5RtX9NMxzxISx2ehPcIkYMNBBpcDwgQ4R3f7Qa4igmoBR2W0I"
 }
