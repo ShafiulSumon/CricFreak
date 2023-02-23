@@ -17,6 +17,8 @@ class SearchViewModel {
         Repository.shared.getData()
         
         Repository.shared.observable.binding() { [weak self] res in
+//            DispatchQueue.main.async {
+//            }
             self?.observable.result = res
         }
     }

@@ -38,14 +38,14 @@ class SearchVC: UIViewController {
 
 extension SearchVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return isSearching ? searchData.count : 0
-        return data.count
+        return isSearching ? searchData.count : 0
+        //return data.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.searchCell, for: indexPath) as! SearchTVC
         
-        cell.img.sd_setImage(with: URL(string: data[indexPath.row].image_path))
-        cell.name.text = data[indexPath.row].name
+        cell.img.sd_setImage(with: URL(string: searchData[indexPath.row].image_path))
+        cell.name.text = searchData[indexPath.row].name
         
         return cell
     }

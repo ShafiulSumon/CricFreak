@@ -30,22 +30,21 @@ class CoreDataManager {
     }
     
     func addData(data: [SearchData]) {
+        
+        var dataArray = [[String: Any]]()
         for val in data {
             if let id = val.id,
                let name = val.fullname,
                let img = val.imagePath {
-                let newRow = Players(context: context)
-                newRow.id = Int32(id)
-                newRow.name = name
-                newRow.image_path = img
-                do {
-                    try context.save()
-                    //players.append(newRow)
-                }
-                catch {
-                    print(error)
-                }
+                let dict: [String: Any] = ["id": Int32(id), "name": name, "image_path": img]
+                dataArray.append(dict)
             }
+        }
+        let batchInsert = NSBatchInsertRequest(entity: Players.entity(), objects: dataArray)
+        do {
+            let result = try context.execute(batchInsert) as? NSBatchInsertResult
+        } catch {
+            print(error)
         }
     }
 }

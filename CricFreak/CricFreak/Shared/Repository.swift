@@ -31,10 +31,8 @@ class Repository {
         }
         else { // already data is cached
             DispatchQueue.global().async { [weak self] in
-                //sleep(1)
                 self?.makeDataForCoreData()
             }
-            //makeDataForCoreData()
         }
     }
     
@@ -48,7 +46,6 @@ class Repository {
     func makeDataForCoreData() {
         CoreDataManager.shared.getData()
         let players = CoreDataManager.shared.players
-        print(players.count)
         var data: [EasySearchModel] = []
         
         for val in players {
@@ -60,7 +57,6 @@ class Repository {
             
             data.append(x)
         }
-        print(data.count)
         observable.result = data
     }
 }
