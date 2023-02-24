@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="68"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-d" translatesAutoresizingMaskIntoConstraints="NO" id="jnt-zX-N6h">
-                                        <rect key="frame" x="16" y="3.3333333333333321" width="157.33333333333334" height="61.333333333333343"/>
+                                        <rect key="frame" x="16" y="3.3333333333333321" width="157.33333333333334" height="61.333333333333357"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="customBlue"/>
@@ -184,6 +184,7 @@
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qU8-js-8OX">
                                         <rect key="frame" x="0.0" y="150" width="393" height="609"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="careerCellOne" rowHeight="102" id="d7D-71-iCt" customClass="CareerTVC_one" customModule="CricFreak" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="393" height="102"/>
@@ -211,7 +212,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                             <constraints>
                                                                 <constraint firstItem="cpO-Dm-7xP" firstAttribute="leading" secondItem="GhR-sF-86p" secondAttribute="trailing" constant="16" id="8Rl-8Z-twJ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="cpO-Dm-7xP" secondAttribute="trailing" constant="8" id="LDC-ro-PXn"/>
@@ -229,7 +230,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="2B5-rr-b0N" secondAttribute="bottom" constant="2" id="ydb-gO-7T5"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="cellBg" destination="2B5-rr-b0N" id="8RX-hq-qwR"/>
                                                     <outlet property="desc" destination="cpO-Dm-7xP" id="Zee-Jv-xj4"/>
@@ -279,7 +280,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                             <constraints>
                                                                 <constraint firstItem="diD-uY-oMj" firstAttribute="leading" secondItem="buw-Qc-d2d" secondAttribute="trailing" constant="16" id="5yM-2L-imk"/>
                                                                 <constraint firstAttribute="bottom" secondItem="buw-Qc-d2d" secondAttribute="bottom" constant="4" id="YK4-ui-QIs"/>
@@ -297,7 +298,7 @@
                                                         <constraint firstItem="RRg-Zt-KSr" firstAttribute="leading" secondItem="W1X-F4-tMK" secondAttribute="leading" constant="16" id="mpg-j9-2Vr"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="cellBg" destination="RRg-Zt-KSr" id="JU5-OT-HQG"/>
                                                     <outlet property="domestic" destination="74B-Sa-fc4" id="gTT-lt-KGs"/>
@@ -309,7 +310,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="rMZ-ja-d8H" secondAttribute="trailing" id="ByQ-wt-guZ"/>
                                     <constraint firstItem="rMZ-ja-d8H" firstAttribute="top" secondItem="tHz-I6-e2r" secondAttribute="top" id="GTU-bC-NBD"/>

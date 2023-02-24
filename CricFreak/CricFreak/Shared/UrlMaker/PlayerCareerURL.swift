@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PlayerCareer {
+struct PlayerCareerURL {
     static func getURL(id: Int) -> String {
         return "https://cricket.sportmonks.com/api/v2.0/players/\(id)" + "?include=career,country&api_token=" + Constants.apiKey
     }

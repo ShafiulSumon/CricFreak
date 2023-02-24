@@ -27,5 +27,6 @@ struct Constants {
     static let careerCellTwo    = "careerCellTwo"
     static let XibOne           = "XibOne"
     static let XibTwo           = "XibTwo"
-    
+    static let FixtureListVC    = "FixtureListVC"
+    static let fixtureListCell  = "fixtureListCell"
 }

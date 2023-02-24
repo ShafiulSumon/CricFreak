@@ -61,6 +61,11 @@ extension MatchesVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        let storyboard = UIStoryboard(name: "Matches", bundle: nil)
+        if let fixtureListVC = storyboard.instantiateViewController(withIdentifier: Constants.FixtureListVC) as? FixtureListVC {
+            FixtureListViewModel.shared.getData(leagueId: data?.data?[indexPath.row].id ?? 0)
+            fixtureListVC.loadViewIfNeeded()
+            navigationController?.pushViewController(fixtureListVC, animated: true)
+        }
     }
 }

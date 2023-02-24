@@ -14,6 +14,7 @@ class RecentContainerViewModel {
     let recentUrl = RecentMatchURL.getURL()
     
     func populateRecentTable() {
+        //print(recentUrl)
         HttpUtility.shared.getDataFromAPI(url: recentUrl) { [weak self] (result: Result<RecentModel?,Error>) in
             
             guard let self = self else { return }

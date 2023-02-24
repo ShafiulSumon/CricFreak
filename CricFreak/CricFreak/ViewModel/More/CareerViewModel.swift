@@ -14,7 +14,7 @@ class CareerViewModel {
     var observable = ObservableObject<CareerModel>()
     
     func getPlayerCareer(id: Int) {
-        let url = PlayerCareer.getURL(id: id)
+        let url = PlayerCareerURL.getURL(id: id)
         
         HttpUtility.shared.getDataFromAPI(url: url) { [weak self] (result: Result<CareerModel?,Error>) in
             

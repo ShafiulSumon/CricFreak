@@ -29,4 +29,25 @@ class DateManager {
         let substr = String(date[startIndex..<endIndex])
         return substr
     }
+    
+    func get_start_and_end_date_Tuple(byMonths: Int) -> (String,String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        
+        let today = Date()
+        
+        let calender = Calendar.current
+        
+        let otherDay = calender.date(byAdding: .month, value: byMonths, to: today)
+        
+        let _today = dateFormatter.string(from: today)
+        let _otherDay = dateFormatter.string(from: otherDay!)
+        
+        if(byMonths < 0) {
+            return (_otherDay, _today)
+        }
+        else {
+            return (_today, _otherDay)
+        }
+    }
 }
