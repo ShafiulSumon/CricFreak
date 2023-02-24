@@ -98,6 +98,10 @@
 		849A60A429A8DE1800D60EB5 /* FixtureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60A329A8DE1800D60EB5 /* FixtureModel.swift */; };
 		849A60A629A8FB0C00D60EB5 /* RankingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60A529A8FB0C00D60EB5 /* RankingURL.swift */; };
 		849A60A829A8FB8500D60EB5 /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60A729A8FB8500D60EB5 /* RankingModel.swift */; };
+		849A60AC29A8FFDE00D60EB5 /* RankingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60AB29A8FFDE00D60EB5 /* RankingVC.swift */; };
+		849A60AE29A8FFF100D60EB5 /* RankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60AD29A8FFF100D60EB5 /* RankingViewModel.swift */; };
+		849A60B029A9000B00D60EB5 /* RankingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60AF29A9000B00D60EB5 /* RankingTVC.swift */; };
+		849A60B229A905DC00D60EB5 /* EasyRankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60B129A905DC00D60EB5 /* EasyRankingModel.swift */; };
 		84A8573529A8BA15001FF416 /* FixtureURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8573429A8BA15001FF416 /* FixtureURL.swift */; };
 		84FDA70F299A6016008543D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA70E299A6016008543D2 /* AppDelegate.swift */; };
 		84FDA711299A6016008543D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA710299A6016008543D2 /* SceneDelegate.swift */; };
@@ -201,6 +205,10 @@
 		849A60A329A8DE1800D60EB5 /* FixtureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureModel.swift; sourceTree = "<group>"; };
 		849A60A529A8FB0C00D60EB5 /* RankingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingURL.swift; sourceTree = "<group>"; };
 		849A60A729A8FB8500D60EB5 /* RankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
+		849A60AB29A8FFDE00D60EB5 /* RankingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingVC.swift; sourceTree = "<group>"; };
+		849A60AD29A8FFF100D60EB5 /* RankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewModel.swift; sourceTree = "<group>"; };
+		849A60AF29A9000B00D60EB5 /* RankingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTVC.swift; sourceTree = "<group>"; };
+		849A60B129A905DC00D60EB5 /* EasyRankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyRankingModel.swift; sourceTree = "<group>"; };
 		84A8573429A8BA15001FF416 /* FixtureURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureURL.swift; sourceTree = "<group>"; };
 		84FDA70B299A6016008543D2 /* CricFreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricFreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FDA70E299A6016008543D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,14 +253,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		8458313D299B8A36003F06EB /* Matches */ = {
+		8458313D299B8A36003F06EB /* Fixture */ = {
 			isa = PBXGroup;
 			children = (
 				8458320B29A88C8F003F06EB /* FixtureList */,
 				8458313E299B8A4D003F06EB /* MatchesVC.swift */,
 				845831D029A5BB9F003F06EB /* LeagueTVC.swift */,
 			);
-			path = Matches;
+			path = Fixture;
 			sourceTree = "<group>";
 		};
 		84583145299C7C98003F06EB /* Shared */ = {
@@ -273,9 +281,10 @@
 		84583146299C7CA5003F06EB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				849A60AA29A8FD2300D60EB5 /* Ranking */,
 				845831ED29A73380003F06EB /* More */,
 				845831D329A5E3D5003F06EB /* SearchPlayer */,
-				845831CD29A5B6A4003F06EB /* Matches */,
+				845831CD29A5B6A4003F06EB /* Fixture */,
 				8458318B299F1B67003F06EB /* Details */,
 				84583154299C8448003F06EB /* Home */,
 			);
@@ -381,6 +390,7 @@
 				845831F829A7869A003F06EB /* EasyCareerModel.swift */,
 				849A60A329A8DE1800D60EB5 /* FixtureModel.swift */,
 				849A60A729A8FB8500D60EB5 /* RankingModel.swift */,
+				849A60B129A905DC00D60EB5 /* EasyRankingModel.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -513,13 +523,13 @@
 			path = Xib;
 			sourceTree = "<group>";
 		};
-		845831CD29A5B6A4003F06EB /* Matches */ = {
+		845831CD29A5B6A4003F06EB /* Fixture */ = {
 			isa = PBXGroup;
 			children = (
 				8458321029A8ADF9003F06EB /* FixtureList */,
 				845831CE29A5B731003F06EB /* MatchesViewModel.swift */,
 			);
-			path = Matches;
+			path = Fixture;
 			sourceTree = "<group>";
 		};
 		845831D229A5E3C4003F06EB /* SearchPlayer */ = {
@@ -587,6 +597,23 @@
 			path = FixtureList;
 			sourceTree = "<group>";
 		};
+		849A60A929A8FD1700D60EB5 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				849A60AB29A8FFDE00D60EB5 /* RankingVC.swift */,
+				849A60AF29A9000B00D60EB5 /* RankingTVC.swift */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		849A60AA29A8FD2300D60EB5 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				849A60AD29A8FFF100D60EB5 /* RankingViewModel.swift */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
 		84FDA702299A6016008543D2 = {
 			isa = PBXGroup;
 			children = (
@@ -633,10 +660,11 @@
 		84FDA726299A6661008543D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				849A60A929A8FD1700D60EB5 /* Ranking */,
 				845831EC29A7336C003F06EB /* More */,
 				845831D229A5E3C4003F06EB /* SearchPlayer */,
 				8458318A299F1B2E003F06EB /* Details */,
-				8458313D299B8A36003F06EB /* Matches */,
+				8458313D299B8A36003F06EB /* Fixture */,
 				8458313A299B7FE3003F06EB /* Home */,
 			);
 			path = View;
@@ -802,6 +830,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849A60B229A905DC00D60EB5 /* EasyRankingModel.swift in Sources */,
 				84583166299CB4C9003F06EB /* HttpUtility.swift in Sources */,
 				845831BB29A48D0B003F06EB /* SquadViewModel.swift in Sources */,
 				8458317F299CFA71003F06EB /* UpcomingExtension.swift in Sources */,
@@ -823,6 +852,7 @@
 				8458313F299B8A4D003F06EB /* MatchesVC.swift in Sources */,
 				845831AE29A32255003F06EB /* ScoreboardURL.swift in Sources */,
 				845831E929A724B1003F06EB /* PlayerCareerURL.swift in Sources */,
+				849A60AC29A8FFDE00D60EB5 /* RankingVC.swift in Sources */,
 				845831C629A4AF76003F06EB /* EasySquadModel.swift in Sources */,
 				8458314F299C82E1003F06EB /* UpcomingContainerVC.swift in Sources */,
 				8458317D299CEB14003F06EB /* UpcomingContainerViewModel.swift in Sources */,
@@ -856,6 +886,7 @@
 				8458319D29A1E727003F06EB /* SquadVC.swift in Sources */,
 				84583185299E1D6B003F06EB /* TopCollCell.swift in Sources */,
 				8458318D299F1B97003F06EB /* DetailsVC.swift in Sources */,
+				849A60AE29A8FFF100D60EB5 /* RankingViewModel.swift in Sources */,
 				8458316D299CCD79003F06EB /* Adapter.swift in Sources */,
 				845831E229A60ACE003F06EB /* Players+CoreDataClass.swift in Sources */,
 				845831E329A60ACE003F06EB /* Players+CoreDataProperties.swift in Sources */,
@@ -866,6 +897,7 @@
 				8458320D29A88CBA003F06EB /* FixtureListVC.swift in Sources */,
 				845831A829A20936003F06EB /* InfoModel.swift in Sources */,
 				84583157299C84B9003F06EB /* RecentContainerViewModel.swift in Sources */,
+				849A60B029A9000B00D60EB5 /* RankingTVC.swift in Sources */,
 				8458313C299B8008003F06EB /* HomeVC.swift in Sources */,
 				845831CA29A5B4C9003F06EB /* LeagueModel.swift in Sources */,
 				8458319F29A1EB44003F06EB /* InfoTVC.swift in Sources */,

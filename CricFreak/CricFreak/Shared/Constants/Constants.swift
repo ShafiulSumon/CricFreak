@@ -29,4 +29,5 @@ struct Constants {
     static let XibTwo           = "XibTwo"
     static let FixtureListVC    = "FixtureListVC"
     static let fixtureListCell  = "fixtureListCell"
+    static let rankingCell      = "rankingCell"
 }

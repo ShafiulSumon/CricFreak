@@ -9,7 +9,7 @@ import Foundation
 
 
 struct RankingURL {
-    static func getURL(leagueId: Int) -> String {
+    static func getURL() -> String {
         return "https://cricket.sportmonks.com/api/v2.0/team-rankings?api_token=" + Constants.apiKey
     }
 }
