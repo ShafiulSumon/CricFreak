@@ -35,6 +35,13 @@ class CareerVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let cellNib1 = UINib(nibName: Constants.XibOne, bundle: nil)
+        let cellNib2 = UINib(nibName: Constants.XibTwo, bundle: nil)
+        tableView.register(cellNib1, forHeaderFooterViewReuseIdentifier: Constants.XibOne)
+        tableView.register(cellNib2, forHeaderFooterViewReuseIdentifier: Constants.XibTwo)
+        
+        reloadTopView()
                 
         CareerViewModel.shared.observable.binding() { [weak self] res in
             DispatchQueue.main.async {
@@ -49,7 +56,7 @@ class CareerVC: UIViewController {
     
     func reloadTopView() {
         playerImg.sd_setImage(with: URL(string: data?.data?.imagePath ?? ""))
-        flag.sd_setImage(with: URL(string: data?.data?.country?.imagePath ?? "https://cdn.sportmonks.com/images/countries/png/short/bd.png"))
+        flag.sd_setImage(with: URL(string: data?.data?.country?.imagePath ?? ""))
         playerName.text = data?.data?.fullname ?? "Unknown"
         country.text = data?.data?.country?.name ?? "Unknown"
     }

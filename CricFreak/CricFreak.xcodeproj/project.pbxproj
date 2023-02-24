@@ -88,6 +88,10 @@
 		845831F529A73FD8003F06EB /* CareerTVC_two.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831F429A73FD8003F06EB /* CareerTVC_two.swift */; };
 		845831F729A75E17003F06EB /* CareerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831F629A75E17003F06EB /* CareerExtension.swift */; };
 		845831F929A7869A003F06EB /* EasyCareerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831F829A7869A003F06EB /* EasyCareerModel.swift */; };
+		8458320429A86BB6003F06EB /* XibOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8458320329A86BB6003F06EB /* XibOne.xib */; };
+		8458320629A86C32003F06EB /* XibOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458320529A86C32003F06EB /* XibOne.swift */; };
+		8458320829A86E64003F06EB /* XibTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8458320729A86E64003F06EB /* XibTwo.xib */; };
+		8458320A29A86F0E003F06EB /* XibTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458320929A86F0E003F06EB /* XibTwo.swift */; };
 		84FDA70F299A6016008543D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA70E299A6016008543D2 /* AppDelegate.swift */; };
 		84FDA711299A6016008543D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA710299A6016008543D2 /* SceneDelegate.swift */; };
 		84FDA716299A6016008543D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FDA714299A6016008543D2 /* Main.storyboard */; };
@@ -180,6 +184,10 @@
 		845831F429A73FD8003F06EB /* CareerTVC_two.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerTVC_two.swift; sourceTree = "<group>"; };
 		845831F629A75E17003F06EB /* CareerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerExtension.swift; sourceTree = "<group>"; };
 		845831F829A7869A003F06EB /* EasyCareerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyCareerModel.swift; sourceTree = "<group>"; };
+		8458320329A86BB6003F06EB /* XibOne.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibOne.xib; sourceTree = "<group>"; };
+		8458320529A86C32003F06EB /* XibOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibOne.swift; sourceTree = "<group>"; };
+		8458320729A86E64003F06EB /* XibTwo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibTwo.xib; sourceTree = "<group>"; };
+		8458320929A86F0E003F06EB /* XibTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibTwo.swift; sourceTree = "<group>"; };
 		84FDA70B299A6016008543D2 /* CricFreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricFreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FDA70E299A6016008543D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FDA710299A6016008543D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -514,6 +522,7 @@
 		845831EC29A7336C003F06EB /* More */ = {
 			isa = PBXGroup;
 			children = (
+				845831FA29A86318003F06EB /* Xib */,
 				845831EE29A733C4003F06EB /* CareerVC.swift */,
 				845831F229A73432003F06EB /* CareerTVC_one.swift */,
 				845831F429A73FD8003F06EB /* CareerTVC_two.swift */,
@@ -528,6 +537,17 @@
 				845831F029A733E3003F06EB /* CareerViewModel.swift */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		845831FA29A86318003F06EB /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				8458320329A86BB6003F06EB /* XibOne.xib */,
+				8458320529A86C32003F06EB /* XibOne.swift */,
+				8458320729A86E64003F06EB /* XibTwo.xib */,
+				8458320929A86F0E003F06EB /* XibTwo.swift */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 		84FDA702299A6016008543D2 = {
@@ -679,7 +699,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8458320829A86E64003F06EB /* XibTwo.xib in Resources */,
 				84FDA71E299A6016008543D2 /* LaunchScreen.storyboard in Resources */,
+				8458320429A86BB6003F06EB /* XibOne.xib in Resources */,
 				84FDA71B299A6016008543D2 /* Assets.xcassets in Resources */,
 				84583139299B2729003F06EB /* More.storyboard in Resources */,
 				845831B329A3868E003F06EB /* ScoreboardTVC.xib in Resources */,
@@ -806,6 +828,7 @@
 				8458313C299B8008003F06EB /* HomeVC.swift in Sources */,
 				845831CA29A5B4C9003F06EB /* LeagueModel.swift in Sources */,
 				8458319F29A1EB44003F06EB /* InfoTVC.swift in Sources */,
+				8458320629A86C32003F06EB /* XibOne.swift in Sources */,
 				8458317A299CEA6E003F06EB /* UpcomingMatchURL.swift in Sources */,
 				845831DD29A60515003F06EB /* SearchURL.swift in Sources */,
 				845831D929A5EDAA003F06EB /* SearchTVC.swift in Sources */,
@@ -814,6 +837,7 @@
 				84FDA70F299A6016008543D2 /* AppDelegate.swift in Sources */,
 				84FDA711299A6016008543D2 /* SceneDelegate.swift in Sources */,
 				845831C829A4EB5B003F06EB /* DateManager.swift in Sources */,
+				8458320A29A86F0E003F06EB /* XibTwo.swift in Sources */,
 				8458318F299F30CA003F06EB /* HomeViewModel.swift in Sources */,
 				845831F729A75E17003F06EB /* CareerExtension.swift in Sources */,
 				8458316B299CC80D003F06EB /* ObservableObject.swift in Sources */,

@@ -10,20 +10,51 @@ import UIKit
 import SDWebImage
 
 extension CareerVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        if section == 0 {
+//            return "Personal Info"
+//        }
+//        else if section == 1 {
+//            return "Batting Info"
+//        }
+//        else {
+//            return "Bowling Info"
+//        }
+//    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell1 = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.XibOne) as! XibOne
+        let cell2 = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.XibTwo) as! XibTwo
+
         if section == 0 {
-            return "Personal Info"
+            //cell1.bgView.backgroundColor = .lightGray
+            cell1.title.text = "Personal Info"
+            cell1.desc.text = ""
+
+            return cell1
         }
         else if section == 1 {
-            return "Batting Info"
+            //cell2.bgView.backgroundColor = .lightGray
+            cell2.title.text = "Batting Info"
+            cell2.tTweenty.text = "T20"
+            cell2.odi.text = "ODI"
+            cell2.domestic.text = "Domestic"
+            
+            return cell2
         }
         else {
-            return "Bowling Info"
+            //cell2.bgView.backgroundColor = .lightGray
+            cell2.title.text = "Bowling Info"
+            cell2.tTweenty.text = "T20"
+            cell2.odi.text = "ODI"
+            cell2.domestic.text = "Domestic"
+            
+            return cell2
         }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 25
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -79,7 +110,7 @@ extension CareerVC: UITableViewDelegate, UITableViewDataSource {
                 cell1.title.text = "Bowling style"
                 cell1.desc.text = data?.data?.bowlingstyle ?? "Unknown"
             }
-            
+            cell1.cellBg.layer.cornerRadius = 5
             return cell1
         }
         
@@ -157,6 +188,7 @@ extension CareerVC: UITableViewDelegate, UITableViewDataSource {
                 cell2.domestic.text = String(calculatedData[2].batting_fifty)
             }
             
+            cell2.cellBg.layer.cornerRadius = 5
             return cell2
         }
         
@@ -233,6 +265,7 @@ extension CareerVC: UITableViewDelegate, UITableViewDataSource {
                 cell2.odi.text = String(calculatedData[1].bowling_tenW)
                 cell2.domestic.text = String(calculatedData[2].bowling_tenW)
             }
+            cell2.cellBg.layer.cornerRadius = 5
             return cell2
         }
         

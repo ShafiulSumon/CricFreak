@@ -10,6 +10,7 @@ import UIKit
 class CareerTVC_two: UITableViewCell {
     
     
+    @IBOutlet weak var cellBg: UIView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var tTweenty: UILabel!
     @IBOutlet weak var odi: UILabel!
