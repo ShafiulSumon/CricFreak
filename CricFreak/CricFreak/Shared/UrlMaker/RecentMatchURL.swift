@@ -16,7 +16,7 @@ struct RecentMatchURL {
         
         let calender = Calendar.current
         
-        let date1 = calender.date(byAdding: .month, value: -1, to: date2)
+        let date1 = calender.date(byAdding: .month, value: -2, to: date2)
         
         let to = dateFormatter.string(from: date2)
         let from = dateFormatter.string(from: date1!)

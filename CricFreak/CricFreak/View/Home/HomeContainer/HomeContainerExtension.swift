@@ -60,7 +60,7 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
         cell.transform = CGAffineTransform(translationX: 0, y: -50)
         
         // Animate the cell to its final state
-        UIView.animate(withDuration: 0.5, delay: 0.1 * Double(indexPath.item), options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.1, delay: 0.05 * Double(indexPath.item), options: [.curveEaseInOut], animations: {
             cell.alpha = 1
             cell.transform = .identity
         }, completion: nil)

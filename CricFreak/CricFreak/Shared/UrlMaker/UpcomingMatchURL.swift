@@ -16,7 +16,7 @@ struct UpcomingMatchURL {
         
         let calender = Calendar.current
         
-        let date2 = calender.date(byAdding: .month, value: 1, to: date1)
+        let date2 = calender.date(byAdding: .month, value: 2, to: date1)
         
         let from = dateFormatter.string(from: date1)
         let to = dateFormatter.string(from: date2!)

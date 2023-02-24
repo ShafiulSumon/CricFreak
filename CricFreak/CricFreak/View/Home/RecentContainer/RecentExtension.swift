@@ -56,7 +56,7 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
         cell.transform = CGAffineTransform(translationX: 0, y: 50)
         
         // Animate the cell to its final state
-        UIView.animate(withDuration: 0.07, delay: 0.07 * Double(indexPath.row), options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 0.02, delay: 0.02 * Double(indexPath.row), options: [.curveEaseOut], animations: {
             cell.alpha = 1
             cell.transform = .identity
         }, completion: nil)
