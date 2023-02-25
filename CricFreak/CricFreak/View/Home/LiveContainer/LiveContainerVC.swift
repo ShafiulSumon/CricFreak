@@ -9,8 +9,18 @@ import UIKit
 
 class LiveContainerVC: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Live"
+        
     }
+    
+    @IBAction func tryAgainBtnTapped(_ sender: UIButton) {
+        activityIndicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            self.activityIndicator.stopAnimating()
+        }
+    }
+    
 }

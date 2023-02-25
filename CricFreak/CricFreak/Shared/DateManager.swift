@@ -12,17 +12,22 @@ class DateManager {
     private init() {}
     
     func daysBetween(currDate: String) -> String {
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date1 = dateFormatter.date(from: currDate)!
-        
-        return String(Calendar.current.dateComponents([.day], from: Date(), to: date1).day!)
+        guard let date1 = dateFormatter.date(from: currDate) else {
+            // handle invalid date string
+            return "0"
+        }
+        let calendar = Calendar.current
+        let startOfToday = calendar.startOfDay(for: Date())
+        let startOfDate1 = calendar.startOfDay(for: date1)
+        let components = calendar.dateComponents([.day], from: startOfToday, to: startOfDate1)
+        return String(components.day ?? 0)
     }
     
     func makeTime(date: String) -> String {
         if(date.count < 17) {
-            return "10:10"
+            return "00:00"
         }
         let startIndex = date.index(date.startIndex, offsetBy: 11)
         let endIndex = date.index(date.startIndex, offsetBy: 16)

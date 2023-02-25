@@ -90,12 +90,18 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="q4q-iD-vWv">
+                                        <rect key="frame" x="178" y="280.66666666666669" width="37" height="37"/>
+                                        <color key="color" name="customBlue"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstItem="FhQ-AN-rcp" firstAttribute="leading" secondItem="ZmP-e3-sU4" secondAttribute="leading" id="3fL-5x-1xe"/>
+                                    <constraint firstItem="q4q-iD-vWv" firstAttribute="centerY" secondItem="ZmP-e3-sU4" secondAttribute="centerY" id="HNU-21-xoi"/>
                                     <constraint firstAttribute="bottom" secondItem="FhQ-AN-rcp" secondAttribute="bottom" id="Kd1-iR-uHy"/>
                                     <constraint firstAttribute="trailing" secondItem="FhQ-AN-rcp" secondAttribute="trailing" id="hwk-TU-saz"/>
+                                    <constraint firstItem="q4q-iD-vWv" firstAttribute="centerX" secondItem="ZmP-e3-sU4" secondAttribute="centerX" id="s1w-6r-xxT"/>
                                     <constraint firstItem="FhQ-AN-rcp" firstAttribute="top" secondItem="ZmP-e3-sU4" secondAttribute="top" id="vbF-F1-azG"/>
                                 </constraints>
                             </view>
@@ -116,6 +122,7 @@
                     <navigationItem key="navigationItem" id="0pX-i7-kg1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="q4q-iD-vWv" id="a4H-Kr-F8p"/>
                         <outlet property="tableView" destination="FhQ-AN-rcp" id="ZR5-bR-MJt"/>
                     </connections>
                 </viewController>
@@ -293,12 +300,18 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oXl-uu-b59">
+                                        <rect key="frame" x="178" y="327" width="37" height="37"/>
+                                        <color key="color" name="customBlue"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="IZm-lX-Jih" secondAttribute="trailing" id="HJM-Eg-Oll"/>
+                                    <constraint firstItem="oXl-uu-b59" firstAttribute="centerY" secondItem="QO4-T2-ZkR" secondAttribute="centerY" id="RCh-UA-k8x"/>
                                     <constraint firstItem="IZm-lX-Jih" firstAttribute="leading" secondItem="QO4-T2-ZkR" secondAttribute="leading" id="TUm-Wd-bz3"/>
                                     <constraint firstAttribute="bottom" secondItem="IZm-lX-Jih" secondAttribute="bottom" id="Ufm-20-t8F"/>
+                                    <constraint firstItem="oXl-uu-b59" firstAttribute="centerX" secondItem="QO4-T2-ZkR" secondAttribute="centerX" id="lWk-dN-jhd"/>
                                     <constraint firstItem="IZm-lX-Jih" firstAttribute="top" secondItem="QO4-T2-ZkR" secondAttribute="top" constant="2" id="mud-Ej-uca"/>
                                 </constraints>
                             </view>
@@ -317,6 +330,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="oXl-uu-b59" id="ZWe-8s-Q6A"/>
                         <outlet property="tableView" destination="IZm-lX-Jih" id="xcV-rV-KHA"/>
                     </connections>
                 </viewController>

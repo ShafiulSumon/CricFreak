@@ -17,10 +17,12 @@ class RankingVC: UIViewController {
     var odiData: [EasyRankingModel] = []
     var t20Data: [EasyRankingModel] = []
     var tableData: [EasyRankingModel] = []
+    var refreshControl = UIRefreshControl()
 
 //MARK: - Outlets
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,15 +35,19 @@ class RankingVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
+        
         segmentControl.selectedSegmentIndex = 0
         
+        activityIndicator.startAnimating()
         rankingViewModel.getRankingData()
-        
         rankingViewModel.observable.binding() { [weak self] response in
             DispatchQueue.main.async {
                 self?.data = response
                 self?.separateRankingData()
-                self?.tableData = self?.testData ?? []
+                self?.selectSegment(id: self?.segmentControl.selectedSegmentIndex ?? 0)
+                self?.activityIndicator.stopAnimating()
                 self?.tableView.reloadData()
             }
         }
@@ -49,10 +55,15 @@ class RankingVC: UIViewController {
     
     
     @IBAction func changeSegment(_ sender: UISegmentedControl) {
-        if(sender.selectedSegmentIndex == 0) {
+        selectSegment(id: sender.selectedSegmentIndex)
+    }
+    
+    func selectSegment(id: Int) {
+        tableData.removeAll()
+        if(id == 0) {
             tableData = testData
         }
-        else if(sender.selectedSegmentIndex == 1) {
+        else if(id == 1) {
             tableData = odiData
         }
         else {
@@ -63,6 +74,9 @@ class RankingVC: UIViewController {
     
     
     func separateRankingData() {
+        testData.removeAll()
+        odiData.removeAll()
+        t20Data.removeAll()
         for dataItem in (data?.data ?? []) {
             if(dataItem.gender == "men") {
                 for team in (dataItem.team ?? []) {
@@ -85,7 +99,13 @@ class RankingVC: UIViewController {
         }
     }
     
-    
+    @objc func refreshTable() {
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.startAnimating()
+            self?.rankingViewModel.getRankingData()
+            self?.refreshControl.endRefreshing()
+        }
+    }
 }
 
 extension RankingVC: UITableViewDelegate, UITableViewDataSource {

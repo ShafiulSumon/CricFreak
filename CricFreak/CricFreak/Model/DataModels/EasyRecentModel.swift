@@ -18,7 +18,7 @@ struct RecentTableData {
     var stage: String = "Unknown"
     var round: String = "Unknown"
     var matchDate: String = "YYYY-MM-dd"
-    var matchTime: String = "20:13"
+    var matchTime: String = "00:00"
     var venue: String = "Unknown"
     var capacity: Int = -1
     var venuCity: String = "Unknown"

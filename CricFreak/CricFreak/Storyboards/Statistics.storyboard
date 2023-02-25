@@ -112,12 +112,18 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5WO-yZ-w4w">
+                                        <rect key="frame" x="178" y="302.66666666666669" width="37" height="37"/>
+                                        <color key="color" name="customBlue"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="hgb-B7-YMU" firstAttribute="top" secondItem="c9k-wd-aUs" secondAttribute="top" constant="16" id="2oN-7s-51A"/>
+                                    <constraint firstItem="5WO-yZ-w4w" firstAttribute="centerY" secondItem="c9k-wd-aUs" secondAttribute="centerY" id="JWi-RL-3HS"/>
                                     <constraint firstItem="hgb-B7-YMU" firstAttribute="width" secondItem="c9k-wd-aUs" secondAttribute="width" multiplier="0.5" id="M9K-yU-NbE"/>
                                     <constraint firstItem="9wT-b4-H7W" firstAttribute="top" secondItem="hgb-B7-YMU" secondAttribute="bottom" constant="16" id="Qlm-4b-vfy"/>
+                                    <constraint firstItem="5WO-yZ-w4w" firstAttribute="centerX" secondItem="c9k-wd-aUs" secondAttribute="centerX" id="XeX-MP-O90"/>
                                     <constraint firstAttribute="trailing" secondItem="9wT-b4-H7W" secondAttribute="trailing" id="ZZi-jD-n1I"/>
                                     <constraint firstAttribute="bottom" secondItem="9wT-b4-H7W" secondAttribute="bottom" id="drK-ZO-CwX"/>
                                     <constraint firstItem="hgb-B7-YMU" firstAttribute="centerX" secondItem="c9k-wd-aUs" secondAttribute="centerX" id="lIo-tT-ysL"/>
@@ -141,6 +147,7 @@
                     <tabBarItem key="tabBarItem" title="Ranking" image="chart.bar.xaxis" catalog="system" id="gEU-Ep-qkP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="5WO-yZ-w4w" id="mIf-im-9Sv"/>
                         <outlet property="segmentControl" destination="hgb-B7-YMU" id="nOP-PO-RqN"/>
                         <outlet property="tableView" destination="9wT-b4-H7W" id="EPU-qE-dXT"/>
                     </connections>

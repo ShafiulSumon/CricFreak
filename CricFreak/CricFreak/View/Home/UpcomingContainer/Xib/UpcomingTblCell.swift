@@ -24,8 +24,28 @@ class UpcomingTblCell: UITableViewCell {
     
     @IBOutlet weak var TeamBimg: UIImageView!
     
+    var timer = Timer()
+    var targetTime: Date?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] timer in
+            guard let self = self, let targetTime = self.targetTime else { return }
+            // Calculate the remaining time
+            let remainingTime = targetTime.timeIntervalSinceNow
+            if remainingTime > 0 {
+                // Update the label with the remaining time
+                let formatter = DateComponentsFormatter()
+                formatter.allowedUnits = [.hour, .minute, .second]
+                formatter.unitsStyle = .abbreviated
+                self.LabelTwo.text = (formatter.string(from: remainingTime) ?? "-1") + " to go"
+            } else {
+                // Stop the timer when the target time has passed
+                //self.timer.invalidate()
+                //self.timer = nil
+                self.LabelTwo.text = "Match already started!!"
+            }
+        })
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -10,25 +10,40 @@ import UIKit
 class UpcomingContainerVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var upcomingContainerViewModel = UpcomingContainerViewModel()
     var upcomingData: EasyRecentModel!
+    var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
+        
         let cellNib = UINib(nibName: Constants.UpcomingTblCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: Constants.upcomingNib)
         
         upcomingContainerViewModel.populateUpcomingTable()
-        
+        activityIndicator.startAnimating()
         upcomingContainerViewModel.observable.binding() { [weak self] response in
             DispatchQueue.main.async {
                 self?.upcomingData = Adapter.shared.convertToEasyForRecentTable(from: response)
+                self?.activityIndicator.stopAnimating()
                 self?.tableView.reloadData()
             }
+        }
+    }
+    
+    @objc func refreshTable() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.activityIndicator.startAnimating()
+            self.upcomingContainerViewModel.populateUpcomingTable()
+            self.refreshControl.endRefreshing()
         }
     }
 }

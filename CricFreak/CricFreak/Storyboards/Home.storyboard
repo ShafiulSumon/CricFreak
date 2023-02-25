@@ -427,21 +427,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="g1F-6S-kah">
+                                <rect key="frame" x="178" y="263.33333333333331" width="37" height="37"/>
+                                <color key="color" name="customBlue"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pdr-2A-og6"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NeQ-bP-iQD" firstAttribute="top" secondItem="3Ey-P0-RcX" secondAttribute="bottom" id="Hhc-CG-9bU"/>
                             <constraint firstAttribute="trailing" secondItem="3Ey-P0-RcX" secondAttribute="trailing" id="O7g-qj-C5s"/>
+                            <constraint firstItem="g1F-6S-kah" firstAttribute="centerX" secondItem="595-l9-vzE" secondAttribute="centerX" id="Rbs-h2-HYg"/>
                             <constraint firstItem="3Ey-P0-RcX" firstAttribute="height" secondItem="595-l9-vzE" secondAttribute="height" multiplier="0.3" id="UQK-4d-bfI"/>
                             <constraint firstAttribute="bottomMargin" secondItem="NeQ-bP-iQD" secondAttribute="bottom" id="W7q-nx-dDn"/>
                             <constraint firstItem="NeQ-bP-iQD" firstAttribute="leading" secondItem="595-l9-vzE" secondAttribute="leadingMargin" constant="-16" id="WdP-A7-Xrf"/>
+                            <constraint firstItem="g1F-6S-kah" firstAttribute="centerY" secondItem="595-l9-vzE" secondAttribute="centerY" id="aaN-0b-B9z"/>
                             <constraint firstItem="3Ey-P0-RcX" firstAttribute="leading" secondItem="595-l9-vzE" secondAttribute="leading" id="eOJ-D5-Z2C"/>
                             <constraint firstItem="3Ey-P0-RcX" firstAttribute="top" secondItem="595-l9-vzE" secondAttribute="top" id="rdw-1x-BzB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NeQ-bP-iQD" secondAttribute="trailing" constant="-16" id="sp3-76-4Kv"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="g1F-6S-kah" id="m5h-z2-8oB"/>
                         <outlet property="collectionView" destination="3Ey-P0-RcX" id="1lQ-pO-wqu"/>
                         <outlet property="tableView" destination="NeQ-bP-iQD" id="aLB-Yj-okz"/>
                         <outlet property="topConstraints" destination="Hhc-CG-9bU" id="zgH-Rr-CCO"/>
@@ -486,20 +493,32 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sorry! No live match available"/>
+                                        <connections>
+                                            <action selector="tryAgainBtnTapped:" destination="gwz-bH-WwN" eventType="touchUpInside" id="nBh-lk-hta"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8BS-Fl-nmD">
+                                <rect key="frame" x="178" y="109" width="37" height="37"/>
+                                <color key="color" name="customBlue"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5ID-mQ-wlB"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qok-O4-hlw" firstAttribute="centerX" secondItem="1vh-EF-gGv" secondAttribute="centerX" id="LWI-1b-VrM"/>
                             <constraint firstItem="qok-O4-hlw" firstAttribute="leading" secondItem="1vh-EF-gGv" secondAttribute="leadingMargin" constant="30" id="SWv-yh-qGV"/>
+                            <constraint firstItem="8BS-Fl-nmD" firstAttribute="centerX" secondItem="1vh-EF-gGv" secondAttribute="centerX" id="TsT-pv-xxO"/>
                             <constraint firstItem="411-Pb-1dv" firstAttribute="width" secondItem="1vh-EF-gGv" secondAttribute="width" multiplier="0.65" id="jV3-kj-KMh"/>
+                            <constraint firstItem="8BS-Fl-nmD" firstAttribute="top" secondItem="5ID-mQ-wlB" secondAttribute="top" constant="50" id="ke3-vL-Pst"/>
                             <constraint firstItem="411-Pb-1dv" firstAttribute="height" secondItem="1vh-EF-gGv" secondAttribute="height" multiplier="0.3" id="l51-nD-Bu1"/>
                             <constraint firstItem="qok-O4-hlw" firstAttribute="centerY" secondItem="1vh-EF-gGv" secondAttribute="centerY" id="wtP-c3-Pxw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="8BS-Fl-nmD" id="NZY-YW-kyH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SF5-CV-ryY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -517,6 +536,10 @@
                                 <rect key="frame" x="16" y="59.000000000000028" width="361" height="504.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zXy-eC-jaU">
+                                <rect key="frame" x="178" y="263.33333333333331" width="37" height="37"/>
+                                <color key="color" name="customBlue"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DCz-fC-aC6"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -524,10 +547,13 @@
                             <constraint firstItem="kxb-oj-N31" firstAttribute="leading" secondItem="X6p-BJ-Kwi" secondAttribute="leadingMargin" id="12e-zC-CdR"/>
                             <constraint firstItem="kxb-oj-N31" firstAttribute="top" secondItem="X6p-BJ-Kwi" secondAttribute="topMargin" id="D9h-WD-rkq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kxb-oj-N31" secondAttribute="trailing" id="SwG-w5-zqe"/>
+                            <constraint firstItem="zXy-eC-jaU" firstAttribute="centerX" secondItem="X6p-BJ-Kwi" secondAttribute="centerX" id="TAv-aE-mNV"/>
                             <constraint firstAttribute="bottomMargin" secondItem="kxb-oj-N31" secondAttribute="bottom" id="m2V-2R-dSp"/>
+                            <constraint firstItem="zXy-eC-jaU" firstAttribute="centerY" secondItem="X6p-BJ-Kwi" secondAttribute="centerY" id="rnh-zc-8jd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="zXy-eC-jaU" id="0t3-YA-JFx"/>
                         <outlet property="tableView" destination="kxb-oj-N31" id="0lb-m8-Rh9"/>
                     </connections>
                 </viewController>
@@ -547,17 +573,24 @@
                                 <rect key="frame" x="16" y="63.000000000000028" width="361" height="500.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="B0S-HY-Pb2">
+                                <rect key="frame" x="178" y="263.33333333333331" width="37" height="37"/>
+                                <color key="color" name="customBlue"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cMZ-0y-iKa"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="89N-La-yV4" firstAttribute="leading" secondItem="Z0v-BW-FoY" secondAttribute="leadingMargin" id="AJ9-OM-Znr"/>
+                            <constraint firstItem="B0S-HY-Pb2" firstAttribute="centerX" secondItem="Z0v-BW-FoY" secondAttribute="centerX" id="DGR-RY-0kT"/>
                             <constraint firstAttribute="bottomMargin" secondItem="89N-La-yV4" secondAttribute="bottom" id="FDS-SF-zmq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="89N-La-yV4" secondAttribute="trailing" id="Nme-VA-AMk"/>
                             <constraint firstItem="89N-La-yV4" firstAttribute="top" secondItem="Z0v-BW-FoY" secondAttribute="topMargin" constant="4" id="ooP-Mo-BsL"/>
+                            <constraint firstItem="B0S-HY-Pb2" firstAttribute="centerY" secondItem="Z0v-BW-FoY" secondAttribute="centerY" id="ymX-aU-RPf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="B0S-HY-Pb2" id="hPP-4B-m64"/>
                         <outlet property="tableView" destination="89N-La-yV4" id="foF-WM-e6x"/>
                     </connections>
                 </viewController>

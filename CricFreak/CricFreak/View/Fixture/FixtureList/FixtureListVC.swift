@@ -10,9 +10,10 @@ import UIKit
 class FixtureListVC: UIViewController {
     
     var data: EasyRecentModel?
+    var refreshControl = UIRefreshControl()
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
@@ -24,11 +25,24 @@ class FixtureListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
+        
         FixtureListViewModel.shared.observable.binding() { [weak self] res in
             DispatchQueue.main.async {
                 self?.data = Adapter.shared.convertToEasyForRecentTable(from: res)
+                self?.activityIndicator.stopAnimating()
                 self?.tableView.reloadData()
             }
+        }
+    }
+    
+    @objc func refreshTable() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.refreshControl.endRefreshing()
+            self.activityIndicator.startAnimating()
+            self.activityIndicator.stopAnimating()
         }
     }
 

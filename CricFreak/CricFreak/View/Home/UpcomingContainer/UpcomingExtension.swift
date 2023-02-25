@@ -16,12 +16,27 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.upcomingNib, for: indexPath) as! UpcomingTblCell
         
         cell.stackView.layer.cornerRadius = 10
-        let rad = cell.TeamAimg.bounds.width/2
-        cell.TeamAimg.layer.cornerRadius = 10
-        cell.TeamBimg.layer.cornerRadius = 10
+        cell.TeamAimg.layer.cornerRadius = 5
+        cell.TeamBimg.layer.cornerRadius = 5
         
         cell.LabelOne.text = upcomingData.data[indexPath.row].stage
-        cell.LabelTwo.text = DateManager.shared.daysBetween(currDate: upcomingData.data[indexPath.row].matchDate) + " days to go"
+        
+        let remTime = DateManager.shared.daysBetween(currDate: upcomingData.data[indexPath.row].matchDate)
+        if(remTime == "0") {
+            let dateString = upcomingData.data[indexPath.row].matchTime
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let targetDate = dateFormatter.date(from: dateString)
+            let timeInterval = targetDate?.timeIntervalSinceNow
+            let seconds = Int(timeInterval?.rounded() ?? 0)
+            cell.targetTime = Date().addingTimeInterval(TimeInterval(seconds<0 ? 0 : seconds))
+        }
+        else {
+            cell.LabelTwo.text = remTime + " days to go"
+        }
+//        cell.targetTime = Date().addingTimeInterval(TimeInterval(10))
+        
+        
         cell.TeamA.text = upcomingData.data[indexPath.row].localteamCode
         cell.TeamB.text = upcomingData.data[indexPath.row].visitorteamCode
         

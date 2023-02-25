@@ -11,8 +11,11 @@ class MatchesVC: UIViewController {
 
     var data: LeagueModel?
     var matchesViewModel = MatchesViewModel()
+    var refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
@@ -25,13 +28,26 @@ class MatchesVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        matchesViewModel.getLeague()
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
         
+        activityIndicator.startAnimating()
+        matchesViewModel.getLeague()
         matchesViewModel.observable.binding() { [weak self] res in
             DispatchQueue.main.async {
                 self?.data = res
+                self?.activityIndicator.stopAnimating()
                 self?.tableView.reloadData()
             }
+        }
+    }
+    
+    @objc func refreshTable() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.refreshControl.endRefreshing()
+            self.activityIndicator.startAnimating()
+            self.matchesViewModel.getLeague()
         }
     }
 }
@@ -65,6 +81,7 @@ extension MatchesVC: UITableViewDataSource, UITableViewDelegate {
         if let fixtureListVC = storyboard.instantiateViewController(withIdentifier: Constants.FixtureListVC) as? FixtureListVC {
             FixtureListViewModel.shared.getData(leagueId: data?.data?[indexPath.row].id ?? 0)
             fixtureListVC.loadViewIfNeeded()
+            fixtureListVC.activityIndicator.startAnimating()
             navigationController?.pushViewController(fixtureListVC, animated: true)
         }
     }

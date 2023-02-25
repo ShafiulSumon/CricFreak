@@ -12,12 +12,13 @@ class HomeContainerVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topConstraints: NSLayoutConstraint!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let upcomingContainerViewModel = UpcomingContainerViewModel()
     let newsViewModel = NewsViewModel()
     var upcomingData: EasyRecentModel!
     var newsData: NewsModel?
+    var refreshControl = UIRefreshControl()
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
@@ -31,6 +32,9 @@ class HomeContainerVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
+        
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: collectionView.bounds.width * 0.9, height: collectionView.bounds.height * 0.95)
         layout.scrollDirection = .horizontal
@@ -39,7 +43,7 @@ class HomeContainerVC: UIViewController {
         
         upcomingContainerViewModel.populateUpcomingTable()
         newsViewModel.getNews()
-        
+        activityIndicator.startAnimating()
         upcomingContainerViewModel.observable.binding() { [weak self] response in
             DispatchQueue.main.async {
                 self?.upcomingData = Adapter.shared.convertToEasyForRecentTable(from: response)
@@ -49,9 +53,19 @@ class HomeContainerVC: UIViewController {
         
         newsViewModel.observable.binding() { [weak self] res in
             DispatchQueue.main.async {
+                self?.activityIndicator.stopAnimating()
                 self?.newsData = res
                 self?.tableView.reloadData()
             }
+        }
+    }
+    
+    @objc func refreshTable() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.refreshControl.endRefreshing()
+            self.activityIndicator.startAnimating()
+            self.newsViewModel.getNews()
         }
     }
 }
