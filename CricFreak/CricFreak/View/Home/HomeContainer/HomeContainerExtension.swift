@@ -86,11 +86,34 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
 }
 
 extension HomeContainerVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Top Newses"
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return (newsData?.articles?.count) ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.newsCell, for: indexPath) as! NewsTVC
+        
+        cell.bgView.layer.cornerRadius = 10
+        cell.bgView.layer.masksToBounds = true
+        
+        cell.imgField.sd_setImage(with: URL(string: newsData?.articles?[indexPath.row].urlToImage ?? ""), placeholderImage: UIImage(named: "newspaper"))
+        cell.headlines.text = newsData?.articles?[indexPath.row].title ?? "No headlines"
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        if let webPageVC = storyboard.instantiateViewController(withIdentifier: Constants.WebKitVC) as? WebKitVC {
+            webPageVC.forURL = newsData?.articles?[indexPath.row].url ?? ""
+            webPageVC.loadViewIfNeeded()
+            self.navigationController?.pushViewController(webPageVC, animated: true)
+        }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = scrollView.contentOffset.y

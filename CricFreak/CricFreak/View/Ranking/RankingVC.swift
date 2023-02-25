@@ -23,6 +23,10 @@ class RankingVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

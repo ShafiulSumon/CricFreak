@@ -9,6 +9,7 @@ import Foundation
 
 struct Constants {
     static let apiKey           = "yUQG6zjv4Bi5RtX9NMxzxISx2ehPcIkYMNBBpcDwgQ4R3f7Qa4igmoBR2W0I"
+    static let newsApiKey       = "173f2871bb654377a5d342f467a4b697"
     static let RecentTblCell    = "RecentTblCell"
     static let recentNib        = "recentNib"
     static let UpcomingTblCell  = "UpcomingTblCell"
@@ -30,4 +31,6 @@ struct Constants {
     static let FixtureListVC    = "FixtureListVC"
     static let fixtureListCell  = "fixtureListCell"
     static let rankingCell      = "rankingCell"
+    static let newsCell         = "newsCell"
+    static let WebKitVC         = "WebKitVC"
 }

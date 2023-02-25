@@ -15,7 +15,13 @@ class HomeContainerVC: UIViewController {
     
     
     let upcomingContainerViewModel = UpcomingContainerViewModel()
+    let newsViewModel = NewsViewModel()
     var upcomingData: EasyRecentModel!
+    var newsData: NewsModel?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +38,19 @@ class HomeContainerVC: UIViewController {
         
         
         upcomingContainerViewModel.populateUpcomingTable()
+        newsViewModel.getNews()
         
         upcomingContainerViewModel.observable.binding() { [weak self] response in
             DispatchQueue.main.async {
                 self?.upcomingData = Adapter.shared.convertToEasyForRecentTable(from: response)
                 self?.collectionView.reloadData()
+            }
+        }
+        
+        newsViewModel.observable.binding() { [weak self] res in
+            DispatchQueue.main.async {
+                self?.newsData = res
+                self?.tableView.reloadData()
             }
         }
     }
