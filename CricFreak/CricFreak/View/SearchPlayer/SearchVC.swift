@@ -10,7 +10,7 @@ import SDWebImage
 
 class SearchVC: UIViewController {
     
-    var isSearching = false
+    //var isSearching = false
     var data: [EasySearchModel] = []
     var searchData: [EasySearchModel] = []
 
@@ -32,11 +32,18 @@ class SearchVC: UIViewController {
         SearchViewModel.shared.observable.binding() { [weak self] res in
             DispatchQueue.main.async { [self] in
                 self?.data = res ?? []
-                print(self?.data.count)
-                self?.searchData = Array((self?.data.prefix(upTo: 5)) ?? [])
+                //self?.searchData = Array((self?.data.prefix(upTo: 5)) ?? [])
+                self?.loadDummyPlayers()
                 self?.tableView.reloadData()
             }
             
+        }
+    }
+    
+    func loadDummyPlayers() {
+        searchData.removeAll()
+        for i in 0...6 {
+            searchData.append(data[i*50])
         }
     }
 }
@@ -44,8 +51,8 @@ class SearchVC: UIViewController {
 //MARK: - TableView Delegate
 extension SearchVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isSearching ? searchData.count : 0
-        //return data.count
+        //return isSearching ? searchData.count : 0
+        return searchData.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.searchCell, for: indexPath) as! SearchTVC
@@ -73,12 +80,14 @@ extension SearchVC: UITableViewDataSource, UITableViewDelegate {
 extension SearchVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchData = data.filter({$0.name.lowercased().prefix(searchText.count) == searchText.lowercased()})
-        isSearching = true
+        //isSearching = true
         tableView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false
+        //isSearching = false
+        //searchData = Array(data.prefix(upTo: 5))
+        loadDummyPlayers()
         tableView.reloadData()
     }
 }
