@@ -24,11 +24,26 @@ class UpcomingTblCell: UITableViewCell {
     
     @IBOutlet weak var TeamBimg: UIImageView!
     
-    var timer = Timer()
+    var timer: Timer?
     var targetTime: Date?
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        timer?.invalidate()
+        timer = nil
+        LabelTwo.text = "Not available"
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    func startTimer(for targetTime: Date) {
+        self.targetTime = targetTime
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] timer in
             guard let self = self, let targetTime = self.targetTime else { return }
             // Calculate the remaining time
@@ -38,18 +53,13 @@ class UpcomingTblCell: UITableViewCell {
                 let formatter = DateComponentsFormatter()
                 formatter.allowedUnits = [.hour, .minute, .second]
                 formatter.unitsStyle = .abbreviated
-                self.LabelTwo.text = (formatter.string(from: remainingTime) ?? "-1") + " to go"
+                self.LabelTwo.text = formatter.string(from: remainingTime)
             } else {
                 // Stop the timer when the target time has passed
-                //self.timer.invalidate()
-                //self.timer = nil
-                self.LabelTwo.text = "Match already started!!"
+                self.timer?.invalidate()
+                self.timer = nil
+                self.LabelTwo.text = "Match started"
             }
         })
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
 }

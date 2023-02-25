@@ -29,12 +29,15 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
             let targetDate = dateFormatter.date(from: dateString)
             let timeInterval = targetDate?.timeIntervalSinceNow
             let seconds = Int(timeInterval?.rounded() ?? 0)
-            cell.targetTime = Date().addingTimeInterval(TimeInterval(seconds<0 ? -1 : seconds))
+            //cell.targetTime = Date().addingTimeInterval(TimeInterval(seconds<0 ? 0 : seconds))
+            //cell.targetTime = Date().addingTimeInterval(TimeInterval(seconds))
+            cell.startTimer(for: targetDate!)
         }
         else {
             cell.LabelTwo.text = remTime + " days to go"
         }
 //        cell.targetTime = Date().addingTimeInterval(TimeInterval(10))
+//        cell.LabelTwo.text = upcomingData.data[indexPath.row].matchTime
         
         
         cell.TeamA.text = upcomingData.data[indexPath.row].localteamCode

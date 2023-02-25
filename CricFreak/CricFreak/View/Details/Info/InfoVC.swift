@@ -54,7 +54,8 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource {
             else if(indexPath.row == 2) {
                 cell.labelOne.text = "Date"
                 if let date = data?.startingAt {
-                    cell.labelTwo.text = String(date.prefix(10))
+                    //cell.labelTwo.text = String(date.prefix(10))
+                    cell.labelTwo.text = DateManager.shared.localTime(startIndex: 0, offset: 10, originalString: date)
                 }
                 else {
                     cell.labelTwo.text = "Unknown"

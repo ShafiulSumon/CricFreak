@@ -37,7 +37,7 @@ class DateManager {
     
     func get_start_and_end_date_Tuple(byMonths: Int) -> (String,String) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         let today = Date()
         

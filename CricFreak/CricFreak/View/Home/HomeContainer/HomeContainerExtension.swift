@@ -31,6 +31,7 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
         cell.runA.isHidden = true
         cell.runB.isHidden = true
         cell.time.text = upcomingData.data[indexPath.row].matchTime
+        //cell.time.text = DateManager.shared.localTime(startIndex: 11, offset: 5, originalString: upcomingData.data[indexPath.row].matchDate)
         cell.date.text = upcomingData.data[indexPath.row].matchDate
         cell.LabelRes.text = upcomingData.data[indexPath.row].venue
         

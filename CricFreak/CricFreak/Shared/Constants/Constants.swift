@@ -9,6 +9,7 @@ import Foundation
 
 struct Constants {
     static let apiKey           = "yUQG6zjv4Bi5RtX9NMxzxISx2ehPcIkYMNBBpcDwgQ4R3f7Qa4igmoBR2W0I"
+    //static let apiKey           = "aGypft0iQPFUBpefG6U1QInmd9OvUDsadwYyMFJZQSGud9rb80dmNlruCfuL" //(paid)
     static let newsApiKey       = "173f2871bb654377a5d342f467a4b697"
     static let RecentTblCell    = "RecentTblCell"
     static let recentNib        = "recentNib"
