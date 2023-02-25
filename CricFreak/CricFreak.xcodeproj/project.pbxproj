@@ -69,7 +69,7 @@
 		845831CA29A5B4C9003F06EB /* LeagueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831C929A5B4C9003F06EB /* LeagueModel.swift */; };
 		845831CC29A5B500003F06EB /* LeagueURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831CB29A5B500003F06EB /* LeagueURL.swift */; };
 		845831CF29A5B731003F06EB /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831CE29A5B731003F06EB /* MatchesViewModel.swift */; };
-		845831D129A5BB9F003F06EB /* LeagueTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831D029A5BB9F003F06EB /* LeagueTVC.swift */; };
+		845831D129A5BB9F003F06EB /* MatchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831D029A5BB9F003F06EB /* MatchTVC.swift */; };
 		845831D529A5E3FC003F06EB /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831D429A5E3FB003F06EB /* SearchVC.swift */; };
 		845831D729A5E408003F06EB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831D629A5E408003F06EB /* SearchViewModel.swift */; };
 		845831D929A5EDAA003F06EB /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845831D829A5EDAA003F06EB /* SearchTVC.swift */; };
@@ -181,7 +181,7 @@
 		845831C929A5B4C9003F06EB /* LeagueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueModel.swift; sourceTree = "<group>"; };
 		845831CB29A5B500003F06EB /* LeagueURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueURL.swift; sourceTree = "<group>"; };
 		845831CE29A5B731003F06EB /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
-		845831D029A5BB9F003F06EB /* LeagueTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTVC.swift; sourceTree = "<group>"; };
+		845831D029A5BB9F003F06EB /* MatchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTVC.swift; sourceTree = "<group>"; };
 		845831D429A5E3FB003F06EB /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		845831D629A5E408003F06EB /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		845831D829A5EDAA003F06EB /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 			children = (
 				8458320B29A88C8F003F06EB /* FixtureList */,
 				8458313E299B8A4D003F06EB /* MatchesVC.swift */,
-				845831D029A5BB9F003F06EB /* LeagueTVC.swift */,
+				845831D029A5BB9F003F06EB /* MatchTVC.swift */,
 			);
 			path = Fixture;
 			sourceTree = "<group>";
@@ -894,7 +894,7 @@
 				8458319B29A1E717003F06EB /* ScoreboardVC.swift in Sources */,
 				849A60B629A9BE9B00D60EB5 /* NewsViewModel.swift in Sources */,
 				845831C129A49018003F06EB /* SquadTVC.swift in Sources */,
-				845831D129A5BB9F003F06EB /* LeagueTVC.swift in Sources */,
+				845831D129A5BB9F003F06EB /* MatchTVC.swift in Sources */,
 				845831B529A3884C003F06EB /* ScoreboardExtension.swift in Sources */,
 				845831F929A7869A003F06EB /* EasyCareerModel.swift in Sources */,
 				845831DF29A60993003F06EB /* Repository.swift in Sources */,

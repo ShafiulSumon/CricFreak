@@ -62,11 +62,11 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource {
             }
             else if(indexPath.row == 3) {
                 cell.labelOne.text = "Time"
-                if let date = data?.startingAt {
-                    let startIndex = date.index(date.startIndex, offsetBy: 11)
-                    let endIndex = date.index(date.startIndex, offsetBy: 16)
-                    let substr = String(date[startIndex..<endIndex])
-                    cell.labelTwo.text = substr
+                if let time = data?.startingAt {
+//                    let startIndex = date.index(date.startIndex, offsetBy: 11)
+//                    let endIndex = date.index(date.startIndex, offsetBy: 16)
+//                    let substr = String(date[startIndex..<endIndex])
+                    cell.labelTwo.text = DateManager.shared.localTime(startIndex: 11, offset: 5, originalString: time)
                 }
                 else {
                     cell.labelTwo.text = "Unknown"

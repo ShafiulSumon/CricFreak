@@ -26,7 +26,8 @@ final class Adapter {
             res.stage = val.data?[i].stage?.name ?? "Unknown"
             res.round = val.data?[i].round ?? "Unknown"
             res.matchDate = String(val.data?[i].startingAt?.prefix(10) ?? "YYYY-MM-dd")
-            res.matchTime = DateManager.shared.makeTime(date: val.data?[i].startingAt ?? "")
+            //res.matchTime = DateManager.shared.makeTime(date: val.data?[i].startingAt ?? "")
+            res.matchTime = DateManager.shared.localTime(startIndex: 11, offset: 5, originalString: val.data?[i].startingAt ?? "")
             res.venue = val.data?[i].venue?.name ?? "Unknown Place"
             res.capacity = val.data?[i].venue?.capacity ?? -1
             res.venuCity = val.data?[i].venue?.city ?? "Unknown"

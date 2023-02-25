@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LeagueTVC: UITableViewCell {
+class MatchTVC: UITableViewCell {
     
     
     @IBOutlet weak var img: UIImageView!

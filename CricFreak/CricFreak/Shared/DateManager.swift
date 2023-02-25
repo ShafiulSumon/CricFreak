@@ -55,4 +55,29 @@ class DateManager {
             return (_today, _otherDay)
         }
     }
+    
+    func localTime(startIndex: Int, offset: Int, originalString: String) -> String {
+        
+        let utcDateString = originalString
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+
+        let utcDate = dateFormatter.date(from: utcDateString)
+
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Dhaka")
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        guard let utcDate = utcDate else {
+            return ""
+            
+        }
+        
+        let dhakaDateString = dateFormatter.string(from: utcDate)
+        
+        let startIndex = dhakaDateString.index(dhakaDateString.startIndex, offsetBy: startIndex)
+        let endIndex = dhakaDateString.index(startIndex, offsetBy: offset)
+        let firstSubstring = dhakaDateString[startIndex..<endIndex]
+        return String(firstSubstring)
+    }
 }

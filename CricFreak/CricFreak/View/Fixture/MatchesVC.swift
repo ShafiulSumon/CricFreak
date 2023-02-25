@@ -57,7 +57,7 @@ extension MatchesVC: UITableViewDataSource, UITableViewDelegate {
         3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.leagueCell, for: indexPath) as! LeagueTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.leagueCell, for: indexPath) as! MatchTVC
         
         cell.bgView.layer.cornerRadius = 10
         

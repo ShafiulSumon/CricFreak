@@ -81,10 +81,15 @@ extension FixtureListVC: UITableViewDelegate, UITableViewDataSource {
             cell.teamBimg.sd_setImage(with: URL(string: data?.data[indexPath.row].visitorteamImg ?? ""))
         }
         
+        cell.bellBtn.isHidden = true
         cell.date.text = "Time: " + (data?.data[indexPath.row].matchTime ?? "Unknown")
         cell.place.text = "Date: " + (data?.data[indexPath.row].matchDate ?? "Unknown")
         cell.note.text = data?.data[indexPath.row].venue
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

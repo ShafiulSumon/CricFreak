@@ -29,7 +29,7 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
             let targetDate = dateFormatter.date(from: dateString)
             let timeInterval = targetDate?.timeIntervalSinceNow
             let seconds = Int(timeInterval?.rounded() ?? 0)
-            cell.targetTime = Date().addingTimeInterval(TimeInterval(seconds<0 ? 0 : seconds))
+            cell.targetTime = Date().addingTimeInterval(TimeInterval(seconds<0 ? -1 : seconds))
         }
         else {
             cell.LabelTwo.text = remTime + " days to go"
