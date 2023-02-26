@@ -107,6 +107,7 @@
 		849A60B829A9BFDC00D60EB5 /* NewsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60B729A9BFDC00D60EB5 /* NewsURL.swift */; };
 		849A60BA29A9C5F400D60EB5 /* NewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60B929A9C5F400D60EB5 /* NewsTVC.swift */; };
 		849A60BD29A9CB2F00D60EB5 /* WebKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60BC29A9CB2E00D60EB5 /* WebKitVC.swift */; };
+		849A60BF29AB269900D60EB5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A60BE29AB269900D60EB5 /* NotificationManager.swift */; };
 		84A8573529A8BA15001FF416 /* FixtureURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8573429A8BA15001FF416 /* FixtureURL.swift */; };
 		84FDA70F299A6016008543D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA70E299A6016008543D2 /* AppDelegate.swift */; };
 		84FDA711299A6016008543D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDA710299A6016008543D2 /* SceneDelegate.swift */; };
@@ -219,6 +220,7 @@
 		849A60B729A9BFDC00D60EB5 /* NewsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsURL.swift; sourceTree = "<group>"; };
 		849A60B929A9C5F400D60EB5 /* NewsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVC.swift; sourceTree = "<group>"; };
 		849A60BC29A9CB2E00D60EB5 /* WebKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitVC.swift; sourceTree = "<group>"; };
+		849A60BE29AB269900D60EB5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		84A8573429A8BA15001FF416 /* FixtureURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureURL.swift; sourceTree = "<group>"; };
 		84FDA70B299A6016008543D2 /* CricFreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricFreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FDA70E299A6016008543D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				84583182299DFAED003F06EB /* CountryFlags.swift */,
 				845831C729A4EB5B003F06EB /* DateManager.swift */,
 				845831DE29A60993003F06EB /* Repository.swift */,
+				849A60BE29AB269900D60EB5 /* NotificationManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -937,6 +940,7 @@
 				845831D929A5EDAA003F06EB /* SearchTVC.swift in Sources */,
 				845831BD29A48D9E003F06EB /* SquadURL.swift in Sources */,
 				849A60A429A8DE1800D60EB5 /* FixtureModel.swift in Sources */,
+				849A60BF29AB269900D60EB5 /* NotificationManager.swift in Sources */,
 				8458315B299C8A62003F06EB /* RecentTblCell.swift in Sources */,
 				84FDA70F299A6016008543D2 /* AppDelegate.swift in Sources */,
 				84FDA711299A6016008543D2 /* SceneDelegate.swift in Sources */,

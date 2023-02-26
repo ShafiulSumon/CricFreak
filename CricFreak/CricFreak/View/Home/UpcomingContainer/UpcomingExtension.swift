@@ -24,7 +24,12 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
         let remTime = DateManager.shared.daysBetween(currDate: upcomingData.data[indexPath.row].matchDate)
         if(remTime == "0") {
             let seconds = remainingTime(matchTime: upcomingData.data[indexPath.row].originalDateTime)
-            print(seconds)
+            
+            let hour = upcomingData.data[indexPath.row].matchTime.prefix(2)
+            let minute = upcomingData.data[indexPath.row].matchTime.suffix(2)
+            let title = upcomingData.data[indexPath.row].localteamCode + " vs " + upcomingData.data[indexPath.row].visitorteamCode
+            NotificationManager.shared.checkForPermission(title: title, hour: Int(hour) ?? 0, minute: Int(minute) ?? 0)
+            
             cell.startTimer(for: Date().addingTimeInterval(TimeInterval(seconds < 0 ? 0 : seconds)))
             
         }
