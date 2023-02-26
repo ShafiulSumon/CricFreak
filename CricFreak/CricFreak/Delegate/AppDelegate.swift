@@ -27,7 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error)
             }
         }
-        sleep(2)
+        sleep(1)
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+           // Handle the authorization result
+        }
         return true
     }
 

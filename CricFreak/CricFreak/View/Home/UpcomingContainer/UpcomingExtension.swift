@@ -23,20 +23,15 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
         
         let remTime = DateManager.shared.daysBetween(currDate: upcomingData.data[indexPath.row].matchDate)
         if(remTime == "0") {
-            let dateString = upcomingData.data[indexPath.row].matchTime
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm"
-            let targetDate = dateFormatter.date(from: dateString)
-            let timeInterval = targetDate?.timeIntervalSinceNow
-            let seconds = Int(timeInterval?.rounded() ?? 0)
-            //cell.targetTime = Date().addingTimeInterval(TimeInterval(seconds<0 ? 0 : seconds))
-            //cell.targetTime = Date().addingTimeInterval(TimeInterval(seconds))
-            cell.startTimer(for: targetDate!)
+            let seconds = remainingTime(matchTime: upcomingData.data[indexPath.row].originalDateTime)
+            print(seconds)
+            cell.startTimer(for: Date().addingTimeInterval(TimeInterval(seconds < 0 ? 0 : seconds)))
+            
         }
         else {
             cell.LabelTwo.text = remTime + " days to go"
         }
-//        cell.targetTime = Date().addingTimeInterval(TimeInterval(10))
+//        cell.startTimer(for: Date().addingTimeInterval(TimeInterval(10)))
 //        cell.LabelTwo.text = upcomingData.data[indexPath.row].matchTime
         
         

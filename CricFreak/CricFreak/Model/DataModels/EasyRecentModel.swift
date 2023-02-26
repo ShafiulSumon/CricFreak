@@ -17,6 +17,7 @@ struct RecentTableData {
     var status: String = ""
     var stage: String = "Unknown"
     var round: String = "Unknown"
+    var originalDateTime: String = ""
     var matchDate: String = "YYYY-MM-dd"
     var matchTime: String = "00:00"
     var venue: String = "Unknown"

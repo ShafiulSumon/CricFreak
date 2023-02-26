@@ -25,7 +25,7 @@ class UpcomingTblCell: UITableViewCell {
     @IBOutlet weak var TeamBimg: UIImageView!
     
     var timer: Timer?
-    var targetTime: Date?
+    //var targetTime: Date?
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -43,9 +43,9 @@ class UpcomingTblCell: UITableViewCell {
     }
     
     func startTimer(for targetTime: Date) {
-        self.targetTime = targetTime
+        //self.targetTime = targetTime
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] timer in
-            guard let self = self, let targetTime = self.targetTime else { return }
+            guard let self = self else { return }
             // Calculate the remaining time
             let remainingTime = targetTime.timeIntervalSinceNow
             if remainingTime > 0 {

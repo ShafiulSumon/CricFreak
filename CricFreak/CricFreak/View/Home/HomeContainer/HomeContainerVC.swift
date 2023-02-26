@@ -58,6 +58,8 @@ class HomeContainerVC: UIViewController {
                 self?.tableView.reloadData()
             }
         }
+        
+        checkForPermission()
     }
     
     @objc func refreshTable() {
@@ -68,4 +70,51 @@ class HomeContainerVC: UIViewController {
             self.newsViewModel.getNews()
         }
     }
+    
+    func checkForPermission() {
+        let center = UNUserNotificationCenter.current()
+        center.getNotificationSettings() { settings in
+            switch settings.authorizationStatus {
+            case .authorized :
+                self.dispatchNotification()
+            case .notDetermined :
+                center.requestAuthorization(options: [.alert, .sound]) { didAllow, error in
+                    if didAllow {
+                        self.dispatchNotification()
+                    }
+                }
+            default:
+                return
+            }
+        }
+    }
+    
+    func dispatchNotification() {
+        let identifier = "First"
+        let title = "The match will start soon"
+        let body = "Don't miss it"
+        let hour = 10
+        let minute = 08
+        let isDaily = false
+        
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        let calendar = Calendar.current
+        var dateComponent = DateComponents(calendar: calendar, timeZone: TimeZone.current)
+        dateComponent.hour = hour
+        dateComponent.minute = minute
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: isDaily)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        center.removePendingNotificationRequests(withIdentifiers: [identifier])
+        center.add(request)
+        
+    }
+    
 }

@@ -46,4 +46,19 @@ class UpcomingContainerVC: UIViewController {
             self.refreshControl.endRefreshing()
         }
     }
+    
+    func remainingTime(matchTime: String) -> TimeInterval {
+        let dateString = matchTime
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        guard let date = dateFormatter.date(from: dateString) else {
+            fatalError("Invalid date format")
+        }
+
+        let currentDate = Date() // current date
+        let timeInterval = date.timeIntervalSince(currentDate)
+        
+        return timeInterval
+    }
 }
