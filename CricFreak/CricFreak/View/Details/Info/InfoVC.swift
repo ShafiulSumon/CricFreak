@@ -8,15 +8,21 @@
 import UIKit
 
 class InfoVC: UIViewController {
+    
+//MARK: - Variables
     var data: InfoData?
     var fixtureId: Int?
     
+//MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
  
+//MARK: - Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NetworkManager.shared.monitorNetwork(viewController: self)
         
         InfoViewModel.shared.observable.binding() { [weak self] res in
             DispatchQueue.main.async {
@@ -27,6 +33,8 @@ class InfoVC: UIViewController {
     }
 }
 
+
+//MARK: - Table Extensions
 extension InfoVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -64,9 +72,6 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource {
             else if(indexPath.row == 3) {
                 cell.labelOne.text = "Time"
                 if let time = data?.startingAt {
-//                    let startIndex = date.index(date.startIndex, offsetBy: 11)
-//                    let endIndex = date.index(date.startIndex, offsetBy: 16)
-//                    let substr = String(date[startIndex..<endIndex])
                     cell.labelTwo.text = DateManager.shared.localTime(startIndex: 11, offset: 5, originalString: time)
                 }
                 else {

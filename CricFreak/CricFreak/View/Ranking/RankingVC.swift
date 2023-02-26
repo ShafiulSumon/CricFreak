@@ -24,16 +24,19 @@ class RankingVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
+//MARK: - Will Appear
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
     }
     
+//MARK: - Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NetworkManager.shared.monitorNetwork(viewController: self)
         
         refreshControl.addTarget(self, action: #selector(refreshTable), for: UIControl.Event.valueChanged)
         tableView.addSubview(refreshControl)
@@ -54,10 +57,13 @@ class RankingVC: UIViewController {
     }
     
     
+//MARK: - Action Buttons
     @IBAction func changeSegment(_ sender: UISegmentedControl) {
         selectSegment(id: sender.selectedSegmentIndex)
     }
     
+    
+//MARK: - All Functions
     func selectSegment(id: Int) {
         tableData.removeAll()
         if(id == 0) {
@@ -71,7 +77,6 @@ class RankingVC: UIViewController {
         }
         tableView.reloadData()
     }
-    
     
     func separateRankingData() {
         testData.removeAll()
@@ -108,6 +113,8 @@ class RankingVC: UIViewController {
     }
 }
 
+
+//MARK: - Table Extensions
 extension RankingVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count

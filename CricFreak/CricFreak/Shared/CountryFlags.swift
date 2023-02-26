@@ -15,18 +15,6 @@ final class CountryFlags {
     let countryUrl = CountryFlagURL.getURL()
     
     func getAllCountry(res: CountryModel?) {
-//        HttpUtility.shared.getDataFromAPI(url: countryUrl) { [weak self] (countryResult: Result<CountryModel,Error>) in
-//
-//            switch countryResult {
-//            case .success(let res):
-//                for val in (res.data ?? []) {
-//                    self?.countryFlagImg[(val.name ?? "")] = val.imagePath ?? ""
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//
-//        }
         for val in (res?.data ?? []) {
             countryFlagImg[(val.name ?? "")] = val.imagePath ?? ""
         }

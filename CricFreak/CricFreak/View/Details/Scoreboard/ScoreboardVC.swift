@@ -9,6 +9,7 @@ import UIKit
 
 class ScoreboardVC: UIViewController {
 
+//MARK: - Variables
     var data: ScoreboardData?
     var teamOneBat: [EasyScoreboardModel] = []
     var teamOneBowl: [EasyScoreboardModel] = []
@@ -17,14 +18,18 @@ class ScoreboardVC: UIViewController {
     var tableDataBat: [EasyScoreboardModel] = []
     var tableDataBowl: [EasyScoreboardModel] = []
     
+//MARK: - Outlets
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+//MARK: - Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NetworkManager.shared.monitorNetwork(viewController: self)
         
         let cellNib = UINib(nibName: Constants.ScoreboardTVC, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: Constants.ScoreTblCell)
@@ -45,10 +50,13 @@ class ScoreboardVC: UIViewController {
         }
     }
     
+//MARK: - Action Buttons
     @IBAction func changeTeam(_ sender: UISegmentedControl) {
         renderTableData(id: sender.selectedSegmentIndex)
     }
     
+    
+//MARK: - All Functions
     func setTitleForSegmentControl() {
         segmentControl.setTitle((data?.localteam?.code) ?? "A", forSegmentAt: 0)
         segmentControl.setTitle((data?.visitorteam?.code) ?? "B", forSegmentAt: 1)

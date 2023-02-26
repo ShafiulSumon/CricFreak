@@ -18,10 +18,6 @@ class CoreDataManager {
     func getData() {
         do {
             let request = NSFetchRequest<Players>(entityName: "Players")
-//            if name != "" {
-//                let predicate = NSPredicate(format: "name CONTAINS %@", name)
-//                request.predicate = predicate
-//            }
             players = try context.fetch(request)
         }
         catch {

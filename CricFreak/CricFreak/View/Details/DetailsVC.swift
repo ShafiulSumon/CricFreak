@@ -10,6 +10,10 @@ import SDWebImage
 
 class DetailsVC: UIViewController {
     
+//MARK: - Variables
+    var fixtureId: Int!
+    var data: RecentTableData!
+    
 //MARK: - Outlets
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var teamAimg: UIImageView!
@@ -29,47 +33,37 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var NetworkContainer: UIView!
     
     
-//MARK: - Variables
-    var fixtureId: Int!
-    var data: RecentTableData!
-    
-//MARK: - Default functions
+//MARK: - Will Appear
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
     
+//MARK: - Will Disappear
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
     
+//MARK: - Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        DetailsViewModel.shared.receiveFixtureData()
-//
-//        DetailsViewModel.shared.observable.binding() { [weak self] data in
-//            DispatchQueue.main.async {
-//                self?.fixtureId = data?.id
-//                self?.data = data
-//                self?.
-//                //DetailsViewModel.shared.observable.result = data
-//            }
-//        }
+        NetworkManager.shared.monitorNetwork(viewController: self)
         
         DetailsViewModel.shared.observable.result = data
         
-        setTopViewValues2()
+        setTopViewValues()
         designTopView()
         segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         selectContainer(segmentIndex: 0)
     }
     
-    
+//MARK: - Action Buttons
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         selectContainer(segmentIndex: sender.selectedSegmentIndex)
     }
     
+//MARK: - All Functions
     func selectContainer(segmentIndex: Int) {
         InfoContainer.isHidden = true
         ScoreboardContainer.isHidden = true
@@ -99,15 +93,6 @@ class DetailsVC: UIViewController {
     }
     
     func setTopViewValues() {
-        labelOne.text = "England tour of India"
-        teamA.text = "India"
-        teamB.text = "England"
-        runA.text = "123-2(23.2)"
-        runB.text = "22(10)"
-        labelTwo.text = "England won by 323 runs(with 21 balls remaining)"
-    }
-    
-    func setTopViewValues2() {
         labelOne.text = data?.stage ?? ""
         teamA.text = data?.localteamName ?? ""
         teamB.text = data?.visitorteamName

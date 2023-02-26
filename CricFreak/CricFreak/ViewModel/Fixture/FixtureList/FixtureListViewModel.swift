@@ -15,7 +15,6 @@ class FixtureListViewModel {
     
     func getData(leagueId: Int) {
         let url = FixtureURL.getURL(leagueId: leagueId)
-        //print(url)
         HttpUtility.shared.getDataFromAPI(url: url) { [weak self] (result: Result<RecentModel?,Error>) in
             
             guard let self = self else { return }

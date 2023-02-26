@@ -10,31 +10,17 @@ import UIKit
 import SDWebImage
 
 extension CareerVC: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if section == 0 {
-//            return "Personal Info"
-//        }
-//        else if section == 1 {
-//            return "Batting Info"
-//        }
-//        else {
-//            return "Bowling Info"
-//        }
-//    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell1 = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.XibOne) as! XibOne
         let cell2 = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.XibTwo) as! XibTwo
 
         if section == 0 {
-            //cell1.bgView.backgroundColor = .lightGray
             cell1.title.text = "Personal Info"
             cell1.desc.text = ""
 
             return cell1
         }
         else if section == 1 {
-            //cell2.bgView.backgroundColor = .lightGray
             cell2.title.text = "Batting Info"
             cell2.tTweenty.text = "T20"
             cell2.odi.text = "ODI"
@@ -43,7 +29,6 @@ extension CareerVC: UITableViewDelegate, UITableViewDataSource {
             return cell2
         }
         else {
-            //cell2.bgView.backgroundColor = .lightGray
             cell2.title.text = "Bowling Info"
             cell2.tTweenty.text = "T20"
             cell2.odi.text = "ODI"

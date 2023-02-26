@@ -23,7 +23,7 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
         
         let remTime = DateManager.shared.daysBetween(currDate: upcomingData.data[indexPath.row].matchDate)
         if(remTime == "0") {
-            let seconds = remainingTime(matchTime: upcomingData.data[indexPath.row].originalDateTime)
+            let seconds = DateManager.shared.remainingTime(matchTime: upcomingData.data[indexPath.row].originalDateTime)
             
             let hour = upcomingData.data[indexPath.row].matchTime.prefix(2)
             let minute = upcomingData.data[indexPath.row].matchTime.suffix(2)
@@ -37,7 +37,6 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
             cell.LabelTwo.text = remTime + " days to go"
         }
 //        cell.startTimer(for: Date().addingTimeInterval(TimeInterval(10)))
-//        cell.LabelTwo.text = upcomingData.data[indexPath.row].matchTime
         
         
         cell.TeamA.text = upcomingData.data[indexPath.row].localteamCode
@@ -66,11 +65,9 @@ extension UpcomingContainerVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // Set the initial state of the cell
         cell.alpha = 0
         cell.transform = CGAffineTransform(translationX: 0, y: 50)
         
-        // Animate the cell to its final state
         UIView.animate(withDuration: 0.02, delay: 0.02 * Double(indexPath.row), options: [.curveEaseOut], animations: {
             cell.alpha = 1
             cell.transform = .identity

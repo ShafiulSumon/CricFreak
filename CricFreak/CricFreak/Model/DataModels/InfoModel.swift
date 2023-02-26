@@ -7,34 +7,6 @@
 
 import Foundation
 
-//// MARK: - Welcome
-//struct InfoModel: Codable {
-//    let data: InfoData?
-//}
-//
-//// MARK: - DataClass
-//struct InfoData: Codable {
-//    let resource: String?
-//    let id: Int?
-//    let round, startingAt, status: String?
-//    let referee, firstumpire, secondumpire, tvumpire: Firstumpire?
-//    let tosswon: String?
-//    let venue: Venue?
-//    let stage: Stage?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case resource, id, round
-//        case startingAt = "starting_at"
-//        case status
-//        case referee, firstumpire, secondumpire, tvumpire, tosswon, venue, stage
-//    }
-//}
-//
-//// MARK: - Firstumpire
-//struct Firstumpire: Codable {
-//    let fullname: String?
-//}
-
 // MARK: - Welcome
 struct InfoModel: Codable {
     var data: InfoData?

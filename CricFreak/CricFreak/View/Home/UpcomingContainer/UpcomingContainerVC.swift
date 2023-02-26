@@ -9,17 +9,22 @@ import UIKit
 
 class UpcomingContainerVC: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+//MARK: - Variables
     var upcomingContainerViewModel = UpcomingContainerViewModel()
     var upcomingData: EasyRecentModel!
     var refreshControl = UIRefreshControl()
     
+//MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+//MARK: - Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NetworkManager.shared.monitorNetwork(viewController: self)
         
         refreshControl.addTarget(self, action: #selector(refreshTable), for: UIControl.Event.valueChanged)
         tableView.addSubview(refreshControl)
@@ -38,6 +43,7 @@ class UpcomingContainerVC: UIViewController {
         }
     }
     
+//MARK: - All Functions
     @objc func refreshTable() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -45,20 +51,5 @@ class UpcomingContainerVC: UIViewController {
             self.upcomingContainerViewModel.populateUpcomingTable()
             self.refreshControl.endRefreshing()
         }
-    }
-    
-    func remainingTime(matchTime: String) -> TimeInterval {
-        let dateString = matchTime
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
-        dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        guard let date = dateFormatter.date(from: dateString) else {
-            fatalError("Invalid date format")
-        }
-
-        let currentDate = Date() // current date
-        let timeInterval = date.timeIntervalSince(currentDate)
-        
-        return timeInterval
     }
 }

@@ -51,11 +51,9 @@ extension RecentContainerVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // Set the initial state of the cell
         cell.alpha = 0
         cell.transform = CGAffineTransform(translationX: 0, y: 50)
         
-        // Animate the cell to its final state
         UIView.animate(withDuration: 0.02, delay: 0.02 * Double(indexPath.row), options: [.curveEaseOut], animations: {
             cell.alpha = 1
             cell.transform = .identity

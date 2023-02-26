@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
+//MARK: - Collection Extension
 extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return upcomingData?.data.count ?? 0
@@ -22,7 +23,10 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
         
         cell.LabelOne.text = upcomingData.data[indexPath.row].stage
         cell.live.layer.cornerRadius = 5
-        cell.live.isHidden = false
+        
+        let status = upcomingData.data[indexPath.row].status
+        
+        cell.live.isHidden = (status=="Finished" || status=="Aban." || status=="NS") ? true : false
         cell.notify.isHidden = false
         cell.teamA.text = upcomingData.data[indexPath.row].localteamCode
         cell.teamB.text = upcomingData.data[indexPath.row].visitorteamCode
@@ -31,7 +35,6 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
         cell.runA.isHidden = true
         cell.runB.isHidden = true
         cell.time.text = upcomingData.data[indexPath.row].matchTime
-        //cell.time.text = DateManager.shared.localTime(startIndex: 11, offset: 5, originalString: upcomingData.data[indexPath.row].matchDate)
         cell.date.text = upcomingData.data[indexPath.row].matchDate
         cell.LabelRes.text = upcomingData.data[indexPath.row].venue
         
@@ -56,11 +59,9 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        // Set the initial state of the cell
         cell.alpha = 0
         cell.transform = CGAffineTransform(translationX: 0, y: -50)
         
-        // Animate the cell to its final state
         UIView.animate(withDuration: 0.1, delay: 0.05 * Double(indexPath.item), options: [.curveEaseInOut], animations: {
             cell.alpha = 1
             cell.transform = .identity
@@ -86,6 +87,7 @@ extension HomeContainerVC: UICollectionViewDelegate, UICollectionViewDataSource 
     }
 }
 
+//MARK: - Table Extension
 extension HomeContainerVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Top Newses"

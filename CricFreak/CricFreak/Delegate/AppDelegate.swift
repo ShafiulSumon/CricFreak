@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let countryUrl = CountryFlagURL.getURL()
         
         HttpUtility.shared.getDataFromAPI(url: countryUrl) { (countryResult: Result<CountryModel,Error>) in
-            
             switch countryResult {
             case .success(let res):
                 CountryFlags.shared.getAllCountry(res: res)

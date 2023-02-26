@@ -15,7 +15,6 @@ class DateManager {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         guard let date1 = dateFormatter.date(from: currDate) else {
-            // handle invalid date string
             return "0"
         }
         let calendar = Calendar.current
@@ -70,7 +69,6 @@ class DateManager {
         
         guard let utcDate = utcDate else {
             return ""
-            
         }
         
         let dhakaDateString = dateFormatter.string(from: utcDate)
@@ -79,5 +77,20 @@ class DateManager {
         let endIndex = dhakaDateString.index(startIndex, offsetBy: offset)
         let firstSubstring = dhakaDateString[startIndex..<endIndex]
         return String(firstSubstring)
+    }
+    
+    func remainingTime(matchTime: String) -> TimeInterval {
+        let dateString = matchTime
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        guard let date = dateFormatter.date(from: dateString) else {
+            fatalError("Invalid date format")
+        }
+
+        let currentDate = Date()
+        let timeInterval = date.timeIntervalSince(currentDate)
+        
+        return timeInterval
     }
 }

@@ -14,8 +14,9 @@ class Repository {
     var observable = ObservableObject<[EasySearchModel]>()
     
     func getData() {
-        // if coredata does not have any data
         CoreDataManager.shared.getData()
+        
+        // if coredata does not have any data
         if(CoreDataManager.shared.players.isEmpty) {
             let url = SearchURL.getURL()
             

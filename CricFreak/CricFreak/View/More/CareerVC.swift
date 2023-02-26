@@ -21,10 +21,12 @@ class CareerVC: UIViewController {
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var country: UILabel!
     
+//MARK: - Will Appear
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
     
+//MARK: - Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +43,8 @@ class CareerVC: UIViewController {
         tableView.register(cellNib1, forHeaderFooterViewReuseIdentifier: Constants.XibOne)
         tableView.register(cellNib2, forHeaderFooterViewReuseIdentifier: Constants.XibTwo)
         
+        NetworkManager.shared.monitorNetwork(viewController: self)
+        
         reloadTopView()
                 
         CareerViewModel.shared.observable.binding() { [weak self] res in
@@ -54,6 +58,7 @@ class CareerVC: UIViewController {
         
     }
     
+//MARK: - All Functions
     func reloadTopView() {
         playerImg.sd_setImage(with: URL(string: data?.data?.imagePath ?? ""))
         flag.sd_setImage(with: URL(string: data?.data?.country?.imagePath ?? ""))
@@ -205,8 +210,8 @@ class CareerVC: UIViewController {
                     total += item.batting?["balls_faced"] ?? 0.0
                 }
                 else {
-                    var over = item.bowling?["overs"] ?? 0
-                    var balls = (Int(floor(over))*6) + (Int(over*10)%10)
+                    let over = item.bowling?["overs"] ?? 0
+                    let balls = (Int(floor(over))*6) + (Int(over*10)%10)
                     total += Double(balls)
                 }
             }
@@ -303,7 +308,4 @@ class CareerVC: UIViewController {
         }
         return Int(total)
     }
-    
-    
-    
 }

@@ -9,24 +9,29 @@ import UIKit
 
 class MatchesVC: UIViewController {
 
+//MARK: - Variables
     var data: LeagueModel?
     var matchesViewModel = MatchesViewModel()
     var refreshControl = UIRefreshControl()
     
+//MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
+//MARK: - Will Appear
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
         navigationController?.isNavigationBarHidden = true
     }
     
+//MARK: - Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NetworkManager.shared.monitorNetwork(viewController: self)
         
         refreshControl.addTarget(self, action: #selector(refreshTable), for: UIControl.Event.valueChanged)
         tableView.addSubview(refreshControl)
@@ -42,6 +47,7 @@ class MatchesVC: UIViewController {
         }
     }
     
+//MARK: - All Functions
     @objc func refreshTable() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -52,6 +58,7 @@ class MatchesVC: UIViewController {
     }
 }
 
+//MARK: - Table Extension
 extension MatchesVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         3

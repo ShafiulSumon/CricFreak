@@ -9,13 +9,18 @@ import UIKit
 
 class SquadVC: UIViewController {
     
+//MARK: - Variables
     var data: SquadData?
     var teamData: RecentTableData?
     var teamA: [EasySquadModel] = []
     var teamB: [EasySquadModel] = []
         
+    
+//MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    
+//MARK: - Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +30,8 @@ class SquadVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NetworkManager.shared.monitorNetwork(viewController: self)
         
         SquadViewModel.shared.teamObservable.binding() { [weak self] team in
             SquadViewModel.shared.observable.binding() { [weak self] res in
@@ -39,7 +46,8 @@ class SquadVC: UIViewController {
         
         
     }
-    
+   
+//MARK: - All Functions
     func separateData() {
         for val in (data?.lineup ?? []) {
             var x = EasySquadModel()

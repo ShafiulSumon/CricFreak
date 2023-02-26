@@ -22,5 +22,4 @@ class TopCollCell: UICollectionViewCell {
     @IBOutlet weak var runB: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var date: UILabel!
-    
 }

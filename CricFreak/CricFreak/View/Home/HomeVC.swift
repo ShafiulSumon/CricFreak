@@ -10,7 +10,6 @@ import UIKit
 class HomeVC: UIViewController {
     
 //MARK: - Outlets
-    
     @IBOutlet weak var NetworkErrorContainer: UIView!
     @IBOutlet weak var recentContainer: UIView!
     @IBOutlet weak var upcomingContainer: UIView!
@@ -23,12 +22,14 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
         UIApplication.shared.statusBarStyle = .lightContent
+        NetworkManager.shared.monitorNetwork(viewController: self)
     }
     
-
 //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NetworkManager.shared.monitorNetwork(viewController: self)
         
         setUpSegmentControl()
         selectContainer(segmentIndex: 0)
@@ -74,5 +75,4 @@ class HomeVC: UIViewController {
             recentContainer.isHidden = false
         }
     }
-    
 }
