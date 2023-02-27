@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let countryUrl = CountryFlagURL.getURL()
-        
         HttpUtility.shared.getDataFromAPI(url: countryUrl) { (countryResult: Result<CountryModel,Error>) in
             switch countryResult {
             case .success(let res):
