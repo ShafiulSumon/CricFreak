@@ -11,10 +11,25 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    static let shared = AppDelegate()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let countryUrl = CountryFlagURL.getURL()
+        HttpUtility.shared.getDataFromAPI(url: countryUrl) { (countryResult: Result<CountryModel,Error>) in
+            switch countryResult {
+            case .success(let res):
+                CountryFlags.shared.getAllCountry(res: res)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        sleep(1)
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+           // Handle the authorization result
+        }
         return true
     }
 
