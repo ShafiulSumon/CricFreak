@@ -16,7 +16,8 @@
 
 ![Apple iPhone 11 Pro Max Presentation (1)](https://user-images.githubusercontent.com/31996183/221511661-4828619e-1312-486d-a48c-4b0f3eb34a24.png)
 
-![Uploading Apple iPhone 11 Pro Max Presentation (2).png…]()
+![Apple iPhone 11 Pro Max Presentation (2)](https://user-images.githubusercontent.com/31996183/221511985-6caa504d-b571-428a-9760-d62141d0425e.png)
+
 
 
 
