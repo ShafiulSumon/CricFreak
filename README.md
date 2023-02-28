@@ -1,5 +1,5 @@
-# CricFreak
- This is a cricket info based App. User can get upcoming, live and recent matches with scoreboard, match info and squad list. Also someone can search any player's career information.
+# CricFreak 
+ This is a cricket info based App.This app is build in swift with MVVM design pattern.Where User can get upcoming, live and recent matches with scoreboard, match info and squad list. Also someone can search any player's career information.
 
 ## Key Features:
 1. Live matches
